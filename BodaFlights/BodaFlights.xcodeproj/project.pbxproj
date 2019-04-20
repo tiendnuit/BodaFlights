@@ -1,0 +1,815 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		45D17A5F9FCCB3C5DFECA402 /* Pods_BodaFlights.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0781C80C995A2DF5B04BAA9 /* Pods_BodaFlights.framework */; };
+		A615E31C226AFF4700640D94 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A615E31B226AFF4700640D94 /* AppDelegate.swift */; };
+		A615E31E226AFF4700640D94 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A615E31D226AFF4700640D94 /* ViewController.swift */; };
+		A615E321226AFF4700640D94 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A615E31F226AFF4700640D94 /* Main.storyboard */; };
+		A615E323226AFF4800640D94 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A615E322226AFF4800640D94 /* Assets.xcassets */; };
+		A615E326226AFF4800640D94 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A615E324226AFF4800640D94 /* LaunchScreen.storyboard */; };
+		A615E331226AFF4900640D94 /* BodaFlightsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A615E330226AFF4900640D94 /* BodaFlightsTests.swift */; };
+		A615E33C226AFF4900640D94 /* BodaFlightsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A615E33B226AFF4900640D94 /* BodaFlightsUITests.swift */; };
+		A615E355226B1D4B00640D94 /* BodaError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A615E354226B1D4B00640D94 /* BodaError.swift */; };
+		A615E357226B1D8D00640D94 /* AppDefined.swift in Sources */ = {isa = PBXBuildFile; fileRef = A615E356226B1D8D00640D94 /* AppDefined.swift */; };
+		A615E359226B724C00640D94 /* LufthansaAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A615E358226B724C00640D94 /* LufthansaAPI.swift */; };
+		A615E35B226B72FF00640D94 /* UIViewController+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = A615E35A226B72FF00640D94 /* UIViewController+Utility.swift */; };
+		A615E35D226B73E800640D94 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = A615E35C226B73E800640D94 /* Logger.swift */; };
+		A615E35F226B747600640D94 /* UIFont+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = A615E35E226B747500640D94 /* UIFont+Utility.swift */; };
+		A615E361226B748100640D94 /* UIColor+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = A615E360226B748100640D94 /* UIColor+Utility.swift */; };
+		DAB9AFB38D32E8F0BE1F4060 /* Pods_BodaFlightsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 175920F9E73DE5DCE39B6E96 /* Pods_BodaFlightsUITests.framework */; };
+		E472459DF043DC9123696CA7 /* Pods_BodaFlightsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8582A505C497715C0BE238BD /* Pods_BodaFlightsTests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A615E32D226AFF4900640D94 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A615E310226AFF4700640D94 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A615E317226AFF4700640D94;
+			remoteInfo = BodaFlights;
+		};
+		A615E338226AFF4900640D94 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A615E310226AFF4700640D94 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A615E317226AFF4700640D94;
+			remoteInfo = BodaFlights;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0F785FD1D9A2FDA5824E8B75 /* Pods-BodaFlights.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BodaFlights.release.xcconfig"; path = "Pods/Target Support Files/Pods-BodaFlights/Pods-BodaFlights.release.xcconfig"; sourceTree = "<group>"; };
+		175920F9E73DE5DCE39B6E96 /* Pods_BodaFlightsUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BodaFlightsUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2A460DCF9B28914F557D5A58 /* Pods-BodaFlightsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BodaFlightsTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BodaFlightsTests/Pods-BodaFlightsTests.debug.xcconfig"; sourceTree = "<group>"; };
+		8582A505C497715C0BE238BD /* Pods_BodaFlightsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BodaFlightsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A0781C80C995A2DF5B04BAA9 /* Pods_BodaFlights.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BodaFlights.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A615E318226AFF4700640D94 /* BodaFlights.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BodaFlights.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A615E31B226AFF4700640D94 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A615E31D226AFF4700640D94 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A615E320226AFF4700640D94 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A615E322226AFF4800640D94 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A615E325226AFF4800640D94 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A615E327226AFF4800640D94 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A615E32C226AFF4900640D94 /* BodaFlightsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BodaFlightsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A615E330226AFF4900640D94 /* BodaFlightsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodaFlightsTests.swift; sourceTree = "<group>"; };
+		A615E332226AFF4900640D94 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A615E337226AFF4900640D94 /* BodaFlightsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BodaFlightsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A615E33B226AFF4900640D94 /* BodaFlightsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodaFlightsUITests.swift; sourceTree = "<group>"; };
+		A615E33D226AFF4900640D94 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A615E354226B1D4B00640D94 /* BodaError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodaError.swift; sourceTree = "<group>"; };
+		A615E356226B1D8D00640D94 /* AppDefined.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDefined.swift; sourceTree = "<group>"; };
+		A615E358226B724C00640D94 /* LufthansaAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LufthansaAPI.swift; sourceTree = "<group>"; };
+		A615E35A226B72FF00640D94 /* UIViewController+Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Utility.swift"; sourceTree = "<group>"; };
+		A615E35C226B73E800640D94 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		A615E35E226B747500640D94 /* UIFont+Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Utility.swift"; sourceTree = "<group>"; };
+		A615E360226B748100640D94 /* UIColor+Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Utility.swift"; sourceTree = "<group>"; };
+		CEDF029CB8B16713BED110AB /* Pods-BodaFlightsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BodaFlightsUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BodaFlightsUITests/Pods-BodaFlightsUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		DBC5040B99054AA5B8177032 /* Pods-BodaFlights.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BodaFlights.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BodaFlights/Pods-BodaFlights.debug.xcconfig"; sourceTree = "<group>"; };
+		E00CC0007B6A44E179F9C978 /* Pods-BodaFlightsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BodaFlightsTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BodaFlightsTests/Pods-BodaFlightsTests.release.xcconfig"; sourceTree = "<group>"; };
+		E877584D36920ECB77D7BE30 /* Pods-BodaFlightsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BodaFlightsUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BodaFlightsUITests/Pods-BodaFlightsUITests.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A615E315226AFF4700640D94 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				45D17A5F9FCCB3C5DFECA402 /* Pods_BodaFlights.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A615E329226AFF4900640D94 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E472459DF043DC9123696CA7 /* Pods_BodaFlightsTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A615E334226AFF4900640D94 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DAB9AFB38D32E8F0BE1F4060 /* Pods_BodaFlightsUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7455FFA79FE012FA298105E4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DBC5040B99054AA5B8177032 /* Pods-BodaFlights.debug.xcconfig */,
+				0F785FD1D9A2FDA5824E8B75 /* Pods-BodaFlights.release.xcconfig */,
+				2A460DCF9B28914F557D5A58 /* Pods-BodaFlightsTests.debug.xcconfig */,
+				E00CC0007B6A44E179F9C978 /* Pods-BodaFlightsTests.release.xcconfig */,
+				CEDF029CB8B16713BED110AB /* Pods-BodaFlightsUITests.debug.xcconfig */,
+				E877584D36920ECB77D7BE30 /* Pods-BodaFlightsUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		836C1C3D6A8DAE538C21CC27 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A0781C80C995A2DF5B04BAA9 /* Pods_BodaFlights.framework */,
+				8582A505C497715C0BE238BD /* Pods_BodaFlightsTests.framework */,
+				175920F9E73DE5DCE39B6E96 /* Pods_BodaFlightsUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A615E30F226AFF4700640D94 = {
+			isa = PBXGroup;
+			children = (
+				A615E31A226AFF4700640D94 /* BodaFlights */,
+				A615E32F226AFF4900640D94 /* BodaFlightsTests */,
+				A615E33A226AFF4900640D94 /* BodaFlightsUITests */,
+				A615E319226AFF4700640D94 /* Products */,
+				7455FFA79FE012FA298105E4 /* Pods */,
+				836C1C3D6A8DAE538C21CC27 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		A615E319226AFF4700640D94 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A615E318226AFF4700640D94 /* BodaFlights.app */,
+				A615E32C226AFF4900640D94 /* BodaFlightsTests.xctest */,
+				A615E337226AFF4900640D94 /* BodaFlightsUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A615E31A226AFF4700640D94 /* BodaFlights */ = {
+			isa = PBXGroup;
+			children = (
+				A615E34C226B195C00640D94 /* Application */,
+				A615E34D226B1C5C00640D94 /* Core */,
+				A615E349226B01AB00640D94 /* ViewControllers */,
+				A615E34A226B191500640D94 /* Views */,
+				A615E352226B1CBC00640D94 /* Models */,
+				A615E353226B1CDE00640D94 /* Storyboards */,
+				A615E34B226B195800640D94 /* Resources */,
+			);
+			path = BodaFlights;
+			sourceTree = "<group>";
+		};
+		A615E32F226AFF4900640D94 /* BodaFlightsTests */ = {
+			isa = PBXGroup;
+			children = (
+				A615E330226AFF4900640D94 /* BodaFlightsTests.swift */,
+				A615E332226AFF4900640D94 /* Info.plist */,
+			);
+			path = BodaFlightsTests;
+			sourceTree = "<group>";
+		};
+		A615E33A226AFF4900640D94 /* BodaFlightsUITests */ = {
+			isa = PBXGroup;
+			children = (
+				A615E33B226AFF4900640D94 /* BodaFlightsUITests.swift */,
+				A615E33D226AFF4900640D94 /* Info.plist */,
+			);
+			path = BodaFlightsUITests;
+			sourceTree = "<group>";
+		};
+		A615E349226B01AB00640D94 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				A615E31D226AFF4700640D94 /* ViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		A615E34A226B191500640D94 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A615E34B226B195800640D94 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A615E327226AFF4800640D94 /* Info.plist */,
+				A615E322226AFF4800640D94 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		A615E34C226B195C00640D94 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				A615E31B226AFF4700640D94 /* AppDelegate.swift */,
+				A615E354226B1D4B00640D94 /* BodaError.swift */,
+				A615E356226B1D8D00640D94 /* AppDefined.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		A615E34D226B1C5C00640D94 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				A615E351226B1C9300640D94 /* Utils */,
+				A615E350226B1C8E00640D94 /* Extensions */,
+				A615E34F226B1C7D00640D94 /* Manager */,
+				A615E34E226B1C6A00640D94 /* Network */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		A615E34E226B1C6A00640D94 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				A615E358226B724C00640D94 /* LufthansaAPI.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		A615E34F226B1C7D00640D94 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		A615E350226B1C8E00640D94 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A615E35A226B72FF00640D94 /* UIViewController+Utility.swift */,
+				A615E35E226B747500640D94 /* UIFont+Utility.swift */,
+				A615E360226B748100640D94 /* UIColor+Utility.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		A615E351226B1C9300640D94 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				A615E35C226B73E800640D94 /* Logger.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		A615E352226B1CBC00640D94 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A615E353226B1CDE00640D94 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				A615E31F226AFF4700640D94 /* Main.storyboard */,
+				A615E324226AFF4800640D94 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A615E317226AFF4700640D94 /* BodaFlights */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A615E340226AFF4900640D94 /* Build configuration list for PBXNativeTarget "BodaFlights" */;
+			buildPhases = (
+				165B651D4417C5D22584B571 /* [CP] Check Pods Manifest.lock */,
+				A615E314226AFF4700640D94 /* Sources */,
+				A615E315226AFF4700640D94 /* Frameworks */,
+				A615E316226AFF4700640D94 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BodaFlights;
+			productName = BodaFlights;
+			productReference = A615E318226AFF4700640D94 /* BodaFlights.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A615E32B226AFF4900640D94 /* BodaFlightsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A615E343226AFF4900640D94 /* Build configuration list for PBXNativeTarget "BodaFlightsTests" */;
+			buildPhases = (
+				98FB892AB4F5D9B09506CFCB /* [CP] Check Pods Manifest.lock */,
+				A615E328226AFF4900640D94 /* Sources */,
+				A615E329226AFF4900640D94 /* Frameworks */,
+				A615E32A226AFF4900640D94 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A615E32E226AFF4900640D94 /* PBXTargetDependency */,
+			);
+			name = BodaFlightsTests;
+			productName = BodaFlightsTests;
+			productReference = A615E32C226AFF4900640D94 /* BodaFlightsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		A615E336226AFF4900640D94 /* BodaFlightsUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A615E346226AFF4900640D94 /* Build configuration list for PBXNativeTarget "BodaFlightsUITests" */;
+			buildPhases = (
+				2D1CF37F6A4789EAAFE28BFA /* [CP] Check Pods Manifest.lock */,
+				A615E333226AFF4900640D94 /* Sources */,
+				A615E334226AFF4900640D94 /* Frameworks */,
+				A615E335226AFF4900640D94 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A615E339226AFF4900640D94 /* PBXTargetDependency */,
+			);
+			name = BodaFlightsUITests;
+			productName = BodaFlightsUITests;
+			productReference = A615E337226AFF4900640D94 /* BodaFlightsUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A615E310226AFF4700640D94 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1020;
+				LastUpgradeCheck = 1020;
+				ORGANIZATIONNAME = "Scor Doan";
+				TargetAttributes = {
+					A615E317226AFF4700640D94 = {
+						CreatedOnToolsVersion = 10.2.1;
+					};
+					A615E32B226AFF4900640D94 = {
+						CreatedOnToolsVersion = 10.2.1;
+						TestTargetID = A615E317226AFF4700640D94;
+					};
+					A615E336226AFF4900640D94 = {
+						CreatedOnToolsVersion = 10.2.1;
+						TestTargetID = A615E317226AFF4700640D94;
+					};
+				};
+			};
+			buildConfigurationList = A615E313226AFF4700640D94 /* Build configuration list for PBXProject "BodaFlights" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A615E30F226AFF4700640D94;
+			productRefGroup = A615E319226AFF4700640D94 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A615E317226AFF4700640D94 /* BodaFlights */,
+				A615E32B226AFF4900640D94 /* BodaFlightsTests */,
+				A615E336226AFF4900640D94 /* BodaFlightsUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A615E316226AFF4700640D94 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A615E326226AFF4800640D94 /* LaunchScreen.storyboard in Resources */,
+				A615E323226AFF4800640D94 /* Assets.xcassets in Resources */,
+				A615E321226AFF4700640D94 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A615E32A226AFF4900640D94 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A615E335226AFF4900640D94 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		165B651D4417C5D22584B571 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BodaFlights-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2D1CF37F6A4789EAAFE28BFA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BodaFlightsUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		98FB892AB4F5D9B09506CFCB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BodaFlightsTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A615E314226AFF4700640D94 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A615E31E226AFF4700640D94 /* ViewController.swift in Sources */,
+				A615E355226B1D4B00640D94 /* BodaError.swift in Sources */,
+				A615E31C226AFF4700640D94 /* AppDelegate.swift in Sources */,
+				A615E35F226B747600640D94 /* UIFont+Utility.swift in Sources */,
+				A615E359226B724C00640D94 /* LufthansaAPI.swift in Sources */,
+				A615E35D226B73E800640D94 /* Logger.swift in Sources */,
+				A615E357226B1D8D00640D94 /* AppDefined.swift in Sources */,
+				A615E35B226B72FF00640D94 /* UIViewController+Utility.swift in Sources */,
+				A615E361226B748100640D94 /* UIColor+Utility.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A615E328226AFF4900640D94 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A615E331226AFF4900640D94 /* BodaFlightsTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A615E333226AFF4900640D94 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A615E33C226AFF4900640D94 /* BodaFlightsUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A615E32E226AFF4900640D94 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A615E317226AFF4700640D94 /* BodaFlights */;
+			targetProxy = A615E32D226AFF4900640D94 /* PBXContainerItemProxy */;
+		};
+		A615E339226AFF4900640D94 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A615E317226AFF4700640D94 /* BodaFlights */;
+			targetProxy = A615E338226AFF4900640D94 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		A615E31F226AFF4700640D94 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A615E320226AFF4700640D94 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		A615E324226AFF4800640D94 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A615E325226AFF4800640D94 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A615E33E226AFF4900640D94 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		A615E33F226AFF4900640D94 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A615E341226AFF4900640D94 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DBC5040B99054AA5B8177032 /* Pods-BodaFlights.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "$(SRCROOT)/BodaFlights/Resources/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LUFTHANSA_API_VERSION = v1;
+				LUFTHANSA_BASE_URL = "https://api.lufthansa.com/";
+				LUFTHANSA_CLIENT_ID = tcduexppjm4faxu9etanfkr3;
+				LUFTHANSA_CLIENT_SECRET = PTMkeMafEv;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tiendn.BodaFlights;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A615E342226AFF4900640D94 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0F785FD1D9A2FDA5824E8B75 /* Pods-BodaFlights.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "$(SRCROOT)/BodaFlights/Resources/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LUFTHANSA_API_VERSION = v1;
+				LUFTHANSA_BASE_URL = "https://api.lufthansa.com/";
+				LUFTHANSA_CLIENT_ID = tcduexppjm4faxu9etanfkr3;
+				LUFTHANSA_CLIENT_SECRET = PTMkeMafEv;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tiendn.BodaFlights;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		A615E344226AFF4900640D94 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2A460DCF9B28914F557D5A58 /* Pods-BodaFlightsTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = BodaFlightsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.tiendn.BodaFlightsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BodaFlights.app/BodaFlights";
+			};
+			name = Debug;
+		};
+		A615E345226AFF4900640D94 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E00CC0007B6A44E179F9C978 /* Pods-BodaFlightsTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = BodaFlightsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.tiendn.BodaFlightsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BodaFlights.app/BodaFlights";
+			};
+			name = Release;
+		};
+		A615E347226AFF4900640D94 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CEDF029CB8B16713BED110AB /* Pods-BodaFlightsUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = BodaFlightsUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.tiendn.BodaFlightsUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = BodaFlights;
+			};
+			name = Debug;
+		};
+		A615E348226AFF4900640D94 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E877584D36920ECB77D7BE30 /* Pods-BodaFlightsUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = BodaFlightsUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.tiendn.BodaFlightsUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = BodaFlights;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A615E313226AFF4700640D94 /* Build configuration list for PBXProject "BodaFlights" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A615E33E226AFF4900640D94 /* Debug */,
+				A615E33F226AFF4900640D94 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A615E340226AFF4900640D94 /* Build configuration list for PBXNativeTarget "BodaFlights" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A615E341226AFF4900640D94 /* Debug */,
+				A615E342226AFF4900640D94 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A615E343226AFF4900640D94 /* Build configuration list for PBXNativeTarget "BodaFlightsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A615E344226AFF4900640D94 /* Debug */,
+				A615E345226AFF4900640D94 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A615E346226AFF4900640D94 /* Build configuration list for PBXNativeTarget "BodaFlightsUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A615E347226AFF4900640D94 /* Debug */,
+				A615E348226AFF4900640D94 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A615E310226AFF4700640D94 /* Project object */;
+}
