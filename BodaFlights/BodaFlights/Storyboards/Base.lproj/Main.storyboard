@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="OsY-Qg-4yX">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,19 +10,195 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="BodaFlights" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" id="BYZ-38-t0r" customClass="LoginViewController" customModule="BodaFlights" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.035294117647058823" green="0.84705882352941175" blue="0.63137254901960782" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ckA-xj-lqQ">
+                                <rect key="frame" x="115.5" y="431" width="183" height="34"/>
+                                <state key="normal" title="Request Access Token">
+                                    <color key="titleColor" red="0.94901960784313721" green="0.95686274509803915" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="requestTokenButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oxy-iL-ooK"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ckA-xj-lqQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="PIB-vY-mRr"/>
+                            <constraint firstItem="ckA-xj-lqQ" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="eBq-Ar-seZ"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1742.0289855072465" y="569.86607142857144"/>
+        </scene>
+        <!--Home View Controller-->
+        <scene sceneID="7UR-Ta-D1T">
+            <objects>
+                <viewController storyboardIdentifier="HomeViewController" id="G7f-Db-crK" customClass="HomeViewController" customModule="BodaFlights" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="XbC-eW-KgJ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="pq7-wA-tOS">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <view key="tableHeaderView" contentMode="scaleToFill" id="w6W-Gx-Ky6">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="423"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="Eq1-Ei-lrE">
+                                            <rect key="frame" x="16" y="30" width="382" height="220"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="53T-4a-9mD" customClass="BodaTextField" customModule="BodaFlights" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="382" height="55"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="55" id="sgT-4l-4Bm"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="From"/>
+                                                        <userDefinedRuntimeAttribute type="image" keyPath="rightIconImage" value="icon-flight-departures"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2fL-0c-gxe" customClass="BodaTextField" customModule="BodaFlights" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="85" width="382" height="55"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="55" id="x07-cN-Wah"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="To"/>
+                                                        <userDefinedRuntimeAttribute type="image" keyPath="rightIconImage" value="icon-flight-arrival"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
+                                                <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jrp-WC-xeJ">
+                                                    <rect key="frame" x="91" y="170" width="200" height="50"/>
+                                                    <color key="backgroundColor" red="0.99607843139999996" green="0.52941176469999995" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="200" id="Ppw-ky-uks"/>
+                                                        <constraint firstAttribute="height" constant="50" id="zbC-X4-18a"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                    <state key="normal" title="Search"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="16"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                    <connections>
+                                                        <segue destination="mbn-02-q8F" kind="presentation" id="aqr-ic-Syb"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="53T-4a-9mD" firstAttribute="leading" secondItem="Eq1-Ei-lrE" secondAttribute="leading" id="IkK-Vq-s4h"/>
+                                                <constraint firstAttribute="trailing" secondItem="2fL-0c-gxe" secondAttribute="trailing" id="goc-15-vr1"/>
+                                                <constraint firstAttribute="trailing" secondItem="53T-4a-9mD" secondAttribute="trailing" id="gvw-I4-Srl"/>
+                                                <constraint firstItem="2fL-0c-gxe" firstAttribute="leading" secondItem="Eq1-Ei-lrE" secondAttribute="leading" id="unh-Ta-Of1"/>
+                                            </constraints>
+                                        </stackView>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstItem="Eq1-Ei-lrE" firstAttribute="leading" secondItem="w6W-Gx-Ky6" secondAttribute="leading" constant="16" id="iGu-4K-Waj"/>
+                                        <constraint firstItem="Eq1-Ei-lrE" firstAttribute="top" secondItem="w6W-Gx-Ky6" secondAttribute="top" constant="30" id="iW0-F3-Ff8"/>
+                                        <constraint firstAttribute="trailing" secondItem="Eq1-Ei-lrE" secondAttribute="trailing" constant="16" id="x5d-zg-9tI"/>
+                                    </constraints>
+                                </view>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="VZx-kf-AKR">
+                                        <rect key="frame" x="0.0" y="451" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="VZx-kf-AKR" id="tyB-CR-Ody">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="f8Y-EJ-C8C" firstAttribute="trailing" secondItem="pq7-wA-tOS" secondAttribute="trailing" id="0Cr-6x-m6V"/>
+                            <constraint firstItem="f8Y-EJ-C8C" firstAttribute="bottom" secondItem="pq7-wA-tOS" secondAttribute="bottom" id="Y7g-O5-2bj"/>
+                            <constraint firstItem="pq7-wA-tOS" firstAttribute="leading" secondItem="f8Y-EJ-C8C" secondAttribute="leading" id="pov-cF-Qnc"/>
+                            <constraint firstItem="pq7-wA-tOS" firstAttribute="top" secondItem="f8Y-EJ-C8C" secondAttribute="top" id="u7r-dF-TND"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="f8Y-EJ-C8C"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Meu-pg-gkG"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="ToLogin" id="1dY-d8-HTr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VDr-Lf-y9j" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="931.88405797101461" y="569.86607142857144"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="SZj-g8-dfL">
+            <objects>
+                <viewController id="mbn-02-q8F" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pVO-K9-plL">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="IMr-iY-qgR">
+                                <rect key="frame" x="0.0" y="100" width="414" height="796"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                            <searchBar contentMode="redraw" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="c6J-S2-9I5" customClass="BodaSearchBar" customModule="BodaFlights" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="44" width="414" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="IMr-iY-qgR" firstAttribute="top" secondItem="c6J-S2-9I5" secondAttribute="bottom" id="4uh-9m-son"/>
+                            <constraint firstItem="c6J-S2-9I5" firstAttribute="trailing" secondItem="qPp-Mu-YwB" secondAttribute="trailing" id="6cu-Gy-RuK"/>
+                            <constraint firstItem="qPp-Mu-YwB" firstAttribute="trailing" secondItem="IMr-iY-qgR" secondAttribute="trailing" id="O5p-PE-Wkf"/>
+                            <constraint firstAttribute="bottom" secondItem="IMr-iY-qgR" secondAttribute="bottom" id="RnC-Ks-a5M"/>
+                            <constraint firstItem="IMr-iY-qgR" firstAttribute="leading" secondItem="qPp-Mu-YwB" secondAttribute="leading" id="bPQ-PI-XOk"/>
+                            <constraint firstItem="c6J-S2-9I5" firstAttribute="leading" secondItem="qPp-Mu-YwB" secondAttribute="leading" id="n9h-3f-FxI"/>
+                            <constraint firstItem="c6J-S2-9I5" firstAttribute="top" secondItem="qPp-Mu-YwB" secondAttribute="top" id="ssw-HD-mrP"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="qPp-Mu-YwB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nOv-fj-iCe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="942" y="1273"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="kF7-p2-gRN">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="OsY-Qg-4yX" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="9OW-oQ-uOf">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="G7f-Db-crK" kind="relationship" relationship="rootViewController" id="yac-jF-xoc"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cfG-GY-9in" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="21.739130434782609" y="569.86607142857144"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="icon-flight-arrival" width="20" height="14"/>
+        <image name="icon-flight-departures" width="20" height="12"/>
+    </resources>
 </document>

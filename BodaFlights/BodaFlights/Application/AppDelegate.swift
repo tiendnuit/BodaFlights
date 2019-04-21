@@ -7,15 +7,29 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+    public class var shared: AppDelegate {
+        return UIApplication.shared.delegate as! AppDelegate
+    }
+    
     var window: UIWindow?
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        // change navigation item title color
+        let navigationBarAppearace = UINavigationBar.appearance()
+        navigationBarAppearace.tintColor = UIColor.white
+        navigationBarAppearace.barTintColor = UIColor.BodaColors.orange
+        navigationBarAppearace.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white, NSAttributedString.Key.font: UIFont.BodaFonts.boldS20]
+        
+        //Log
+        log.level = .debug
         return true
     }
 
@@ -40,7 +54,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
+}
 
-
+//MARK: - Boda methods
+extension AppDelegate {
+    func logout() {
+        DataManager.shared.logout()
+        LoginViewController.show()
+    }
 }
 

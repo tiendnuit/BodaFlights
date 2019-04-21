@@ -13,5 +13,6 @@ extension UIFont {
     enum BodaFonts {
         static let regS15 = UIFont.systemFont(ofSize: 15, weight: .regular)
         static let boldS20 = UIFont.systemFont(ofSize: 20, weight: .bold)
+        static let regS11 = UIFont.systemFont(ofSize: 11, weight: .regular)
     }
 }

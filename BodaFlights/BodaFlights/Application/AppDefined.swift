@@ -34,5 +34,13 @@ struct AppDefined {
             return getStringValue(key: "LufthansaApiVersion")
         }
         
+        static let ITEMS_PER_PAGE = 20
+        static let DEFAULT_LANGUAGE = "en"
+    }
+    
+    enum UserDefault: String {
+        case AccessToken = "AccessToken"
+        case TokenType = "TokenType"
+        case TokenExpired = "TokenExpired"
     }
 }

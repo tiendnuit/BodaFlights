@@ -13,6 +13,10 @@ extension UIColor {
     enum BodaColors {
         static let orange: UIColor = UIColor.colorWithHexString("FE8700")
         static let green: UIColor = UIColor.colorWithHexString("09D8A1")
+        static let lightGrayTitle = UIColor.colorWithHexString("9B9B9B").withAlphaComponent(0.6)
+        static let lightGrayLine = UIColor.colorWithHexString("E1E1E1")
+        static let brown = UIColor.colorWithHexString("26211A")
+        static let gray = UIColor.colorWithHexString("F2F4F5")
     }
     
     class func rgba(_ red: CGFloat, green: CGFloat, blue: CGFloat, alpha: CGFloat) -> UIColor {
