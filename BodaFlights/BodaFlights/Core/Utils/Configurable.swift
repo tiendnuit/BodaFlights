@@ -15,4 +15,5 @@ protocol Configurable {
 protocol UIViewControllerConfigurable {
     func setupComponents()
     func bindViewModel()
+    func updateUI()
 }

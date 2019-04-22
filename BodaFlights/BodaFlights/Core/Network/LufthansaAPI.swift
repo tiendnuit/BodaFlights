@@ -10,9 +10,6 @@ import Foundation
 import Moya
 
 // MARK: - Provider setup
-
-let lufthansaAPI = MoyaProvider<LufthansaAPI>(plugins: [NetworkLoggerPlugin(verbose: true)])
-
 public enum LufthansaAPI {
     case accessToken
     case countries(code: String?, pagingInfo: PaginationInfo)
@@ -45,8 +42,9 @@ extension LufthansaAPI: TargetType {
                 return "/references/airports/\(code)"
             }
             return "/references/airports"
-        case .schedules:
-            return "/operations/schedules"
+        case .schedules(let origin, let destination, let fromDateTime, _):
+            let date = fromDateTime.toString(dateFormat: "yyyy-MM-dd")
+            return "/operations/schedules/\(origin)/\(destination)/\(date)"
 
         }
     }
@@ -76,6 +74,11 @@ extension LufthansaAPI: TargetType {
         case .airports(_, let pagingInfo):
             return .requestParameters(parameters: pagingInfo.params, encoding: parameterEncoding)
             
+        case .schedules(_, _, _, let pagingInfo):
+            var params = pagingInfo.params
+            //params["directFlights"] = true
+            return .requestParameters(parameters: params, encoding: parameterEncoding)
+            
         default:
             return .requestPlain
         }
@@ -100,8 +103,8 @@ extension LufthansaAPI: TargetType {
             return ["Content-Type": "application/x-www-form-urlencoded"]
         default:
             var params = ["Content-Type": "application/json", "Accept": "application/json"]
-            if let accessToken = DataManager.shared.accessToken {
-                params["Authorization"] = "Bearer \(accessToken)"
+            if let accessToken = DataManager.shared.accessToken, let type = DataManager.shared.tokenType?.capitalized {
+                params["Authorization"] = "\(type) \(accessToken)"
             }
             
             return params

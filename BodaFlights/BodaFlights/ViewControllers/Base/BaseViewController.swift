@@ -25,4 +25,7 @@ class BaseViewController: UIViewController, UIViewControllerConfigurable {
     
     func bindViewModel() {
     }
+    
+    func updateUI() {
+    }
 }

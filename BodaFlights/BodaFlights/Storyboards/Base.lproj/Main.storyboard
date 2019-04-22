@@ -80,7 +80,7 @@
                                                         <userDefinedRuntimeAttribute type="image" keyPath="rightIconImage" value="icon-flight-arrival"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
-                                                <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jrp-WC-xeJ">
+                                                <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jrp-WC-xeJ">
                                                     <rect key="frame" x="91" y="170" width="200" height="50"/>
                                                     <color key="backgroundColor" red="0.99607843139999996" green="0.52941176469999995" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
@@ -95,7 +95,7 @@
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                     <connections>
-                                                        <segue destination="mbn-02-q8F" kind="presentation" id="aqr-ic-Syb"/>
+                                                        <segue destination="Z0A-D0-u3C" kind="show" identifier="ToSchedules" id="aYz-N5-OEG"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -137,6 +137,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="Meu-pg-gkG"/>
                     <connections>
+                        <outlet property="fromTextField" destination="53T-4a-9mD" id="5wf-DO-hUg"/>
+                        <outlet property="searchButton" destination="Jrp-WC-xeJ" id="Xix-iK-9kK"/>
+                        <outlet property="toTextField" destination="2fL-0c-gxe" id="dfg-8L-zaL"/>
                         <segue destination="BYZ-38-t0r" kind="presentation" identifier="ToLogin" id="1dY-d8-HTr"/>
                     </connections>
                 </viewController>
@@ -144,39 +147,40 @@
             </objects>
             <point key="canvasLocation" x="931.88405797101461" y="569.86607142857144"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="SZj-g8-dfL">
+        <!--Airport Search View Controller-->
+        <scene sceneID="76f-pK-zBH">
             <objects>
-                <viewController id="mbn-02-q8F" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="pVO-K9-plL">
+                <viewController storyboardIdentifier="AirportSearchViewController" id="MSM-Bj-nki" customClass="AirportSearchViewController" customModule="BodaFlights" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="AIX-Sq-ZlK">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="IMr-iY-qgR">
-                                <rect key="frame" x="0.0" y="100" width="414" height="796"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aQp-4A-Rg4">
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="MSM-Bj-nki" id="xPh-Ij-GAE"/>
+                                    <outlet property="delegate" destination="MSM-Bj-nki" id="tzc-bu-JYy"/>
+                                </connections>
                             </tableView>
-                            <searchBar contentMode="redraw" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="c6J-S2-9I5" customClass="BodaSearchBar" customModule="BodaFlights" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="44" width="414" height="56"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="IMr-iY-qgR" firstAttribute="top" secondItem="c6J-S2-9I5" secondAttribute="bottom" id="4uh-9m-son"/>
-                            <constraint firstItem="c6J-S2-9I5" firstAttribute="trailing" secondItem="qPp-Mu-YwB" secondAttribute="trailing" id="6cu-Gy-RuK"/>
-                            <constraint firstItem="qPp-Mu-YwB" firstAttribute="trailing" secondItem="IMr-iY-qgR" secondAttribute="trailing" id="O5p-PE-Wkf"/>
-                            <constraint firstAttribute="bottom" secondItem="IMr-iY-qgR" secondAttribute="bottom" id="RnC-Ks-a5M"/>
-                            <constraint firstItem="IMr-iY-qgR" firstAttribute="leading" secondItem="qPp-Mu-YwB" secondAttribute="leading" id="bPQ-PI-XOk"/>
-                            <constraint firstItem="c6J-S2-9I5" firstAttribute="leading" secondItem="qPp-Mu-YwB" secondAttribute="leading" id="n9h-3f-FxI"/>
-                            <constraint firstItem="c6J-S2-9I5" firstAttribute="top" secondItem="qPp-Mu-YwB" secondAttribute="top" id="ssw-HD-mrP"/>
+                            <constraint firstAttribute="bottom" secondItem="aQp-4A-Rg4" secondAttribute="bottom" id="Cdx-v3-tIf"/>
+                            <constraint firstItem="aQp-4A-Rg4" firstAttribute="leading" secondItem="ShV-iQ-1RV" secondAttribute="leading" id="RBd-S0-5VD"/>
+                            <constraint firstItem="ShV-iQ-1RV" firstAttribute="trailing" secondItem="aQp-4A-Rg4" secondAttribute="trailing" id="lEA-mn-Deq"/>
+                            <constraint firstItem="aQp-4A-Rg4" firstAttribute="top" secondItem="ShV-iQ-1RV" secondAttribute="top" id="oE8-rU-g0x"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="qPp-Mu-YwB"/>
+                        <viewLayoutGuide key="safeArea" id="ShV-iQ-1RV"/>
                     </view>
+                    <navigationItem key="navigationItem" id="nRn-8k-ZpI"/>
+                    <connections>
+                        <outlet property="searchResultsTable" destination="aQp-4A-Rg4" id="I9z-Vp-ZHS"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="nOv-fj-iCe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="izq-0w-Iyl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="942" y="1273"/>
+            <point key="canvasLocation" x="932" y="1998"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="kF7-p2-gRN">
@@ -195,6 +199,80 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cfG-GY-9in" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="21.739130434782609" y="569.86607142857144"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="VXm-Lr-Sbf">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ige-Ag-aU4" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Eeo-8d-O0p">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="MSM-Bj-nki" kind="relationship" relationship="rootViewController" id="J6N-xV-An0"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gln-Xa-FZc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="932" y="1280"/>
+        </scene>
+        <!--Airport Schedules View Controller-->
+        <scene sceneID="bDb-v9-JUN">
+            <objects>
+                <viewController storyboardIdentifier="AirportSchedulesViewController" id="Z0A-D0-u3C" customClass="AirportSchedulesViewController" customModule="BodaFlights" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Usf-yq-3o0">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="yDt-HJ-o9e">
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="xCX-M2-nbc" firstAttribute="trailing" secondItem="yDt-HJ-o9e" secondAttribute="trailing" id="MGN-UJ-Pib"/>
+                            <constraint firstItem="yDt-HJ-o9e" firstAttribute="top" secondItem="xCX-M2-nbc" secondAttribute="top" id="h5Q-8G-v4X"/>
+                            <constraint firstAttribute="bottom" secondItem="yDt-HJ-o9e" secondAttribute="bottom" id="oB3-0N-QGG"/>
+                            <constraint firstItem="yDt-HJ-o9e" firstAttribute="leading" secondItem="xCX-M2-nbc" secondAttribute="leading" id="tKM-ix-gOB"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="xCX-M2-nbc"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="yDt-HJ-o9e" id="CIt-zQ-UeJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ciO-6C-jZ9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1742" y="1280"/>
+        </scene>
+        <!--Schedule Detail View Controller-->
+        <scene sceneID="b6X-lo-xZo">
+            <objects>
+                <viewController storyboardIdentifier="ScheduleDetailViewController" id="jin-5w-8Fs" customClass="ScheduleDetailViewController" customModule="BodaFlights" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0RL-NR-V6x">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="3Bw-2Y-YOs">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="clD-Ox-IMM" firstAttribute="trailing" secondItem="3Bw-2Y-YOs" secondAttribute="trailing" id="EB8-pl-65y"/>
+                            <constraint firstAttribute="bottom" secondItem="3Bw-2Y-YOs" secondAttribute="bottom" id="HO4-UM-y5T"/>
+                            <constraint firstItem="3Bw-2Y-YOs" firstAttribute="top" secondItem="0RL-NR-V6x" secondAttribute="top" id="Q5G-lL-fhY"/>
+                            <constraint firstItem="3Bw-2Y-YOs" firstAttribute="leading" secondItem="clD-Ox-IMM" secondAttribute="leading" id="vgq-qA-YzP"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="clD-Ox-IMM"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fkI-5W-al5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2567" y="1275"/>
         </scene>
     </scenes>
     <resources>

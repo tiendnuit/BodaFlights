@@ -8,6 +8,25 @@
 
 /* Begin PBXBuildFile section */
 		45D17A5F9FCCB3C5DFECA402 /* Pods_BodaFlights.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0781C80C995A2DF5B04BAA9 /* Pods_BodaFlights.framework */; };
+		A61575AB226D5ECF00904650 /* SearchBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61575AA226D5ECF00904650 /* SearchBaseViewController.swift */; };
+		A61575AD226D608100904650 /* AirportSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61575AC226D608100904650 /* AirportSearchViewController.swift */; };
+		A61575AF226D60FD00904650 /* AirportTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61575AE226D60FD00904650 /* AirportTableViewCell.swift */; };
+		A61575B1226D612C00904650 /* AirportTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A61575B0226D612C00904650 /* AirportTableViewCell.xib */; };
+		A61575B3226D618B00904650 /* BodaLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61575B2226D618B00904650 /* BodaLabel.swift */; };
+		A61575B6226D674C00904650 /* AirportPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61575B5226D674C00904650 /* AirportPresentable.swift */; };
+		A61575B9226D71E400904650 /* AirportSchedulesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61575B8226D71E400904650 /* AirportSchedulesViewController.swift */; };
+		A61575BB226D750C00904650 /* AirportSchedulesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61575BA226D750C00904650 /* AirportSchedulesViewModel.swift */; };
+		A61575BD226D753900904650 /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61575BC226D753900904650 /* ViewModelType.swift */; };
+		A61575BF226D76B200904650 /* ObservableType+Tracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61575BE226D76B200904650 /* ObservableType+Tracker.swift */; };
+		A61575C1226D76FA00904650 /* ObservableType+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61575C0226D76FA00904650 /* ObservableType+Utility.swift */; };
+		A61575C3226D778300904650 /* ErrorTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61575C2226D778300904650 /* ErrorTracker.swift */; };
+		A61575C5226D799D00904650 /* ApiProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61575C4226D799D00904650 /* ApiProvider.swift */; };
+		A61575C7226D7C1F00904650 /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61575C6226D7C1F00904650 /* Schedule.swift */; };
+		A61575C9226D7F3800904650 /* Flight.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61575C8226D7F3800904650 /* Flight.swift */; };
+		A61575CB226D9FA700904650 /* AirportScheduleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61575CA226D9FA700904650 /* AirportScheduleTableViewCell.swift */; };
+		A61575CD226DA01600904650 /* SchedulePresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61575CC226DA01600904650 /* SchedulePresentable.swift */; };
+		A61575CF226DA1A800904650 /* AirportScheduleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A61575CE226DA1A800904650 /* AirportScheduleTableViewCell.xib */; };
+		A61575D2226DBF1600904650 /* ScheduleDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61575D1226DBF1600904650 /* ScheduleDetailViewController.swift */; };
 		A615E31C226AFF4700640D94 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A615E31B226AFF4700640D94 /* AppDelegate.swift */; };
 		A615E31E226AFF4700640D94 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A615E31D226AFF4700640D94 /* LoginViewController.swift */; };
 		A615E321226AFF4700640D94 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A615E31F226AFF4700640D94 /* Main.storyboard */; };
@@ -36,11 +55,9 @@
 		A615E37D226C653600640D94 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = A615E37C226C653600640D94 /* City.swift */; };
 		A615E37F226C654A00640D94 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = A615E37E226C654A00640D94 /* Country.swift */; };
 		A615E381226C6A4300640D94 /* LufthansaName.swift in Sources */ = {isa = PBXBuildFile; fileRef = A615E380226C6A4200640D94 /* LufthansaName.swift */; };
-		A615E383226C7AAB00640D94 /* MoyaResponse+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = A615E382226C7AAB00640D94 /* MoyaResponse+Utility.swift */; };
 		A615E385226CD80800640D94 /* BodaTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A615E384226CD80800640D94 /* BodaTextField.swift */; };
 		A615E389226CDFCD00640D94 /* UIView+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = A615E388226CDFCD00640D94 /* UIView+Utility.swift */; };
 		A615E38B226CE30D00640D94 /* IBInspectables.swift in Sources */ = {isa = PBXBuildFile; fileRef = A615E38A226CE30D00640D94 /* IBInspectables.swift */; };
-		A615E38D226CE59F00640D94 /* BodaSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A615E38C226CE59F00640D94 /* BodaSearchBar.swift */; };
 		DAB9AFB38D32E8F0BE1F4060 /* Pods_BodaFlightsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 175920F9E73DE5DCE39B6E96 /* Pods_BodaFlightsUITests.framework */; };
 		E472459DF043DC9123696CA7 /* Pods_BodaFlightsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8582A505C497715C0BE238BD /* Pods_BodaFlightsTests.framework */; };
 /* End PBXBuildFile section */
@@ -68,6 +85,25 @@
 		2A460DCF9B28914F557D5A58 /* Pods-BodaFlightsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BodaFlightsTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BodaFlightsTests/Pods-BodaFlightsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8582A505C497715C0BE238BD /* Pods_BodaFlightsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BodaFlightsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0781C80C995A2DF5B04BAA9 /* Pods_BodaFlights.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BodaFlights.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A61575AA226D5ECF00904650 /* SearchBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBaseViewController.swift; sourceTree = "<group>"; };
+		A61575AC226D608100904650 /* AirportSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirportSearchViewController.swift; sourceTree = "<group>"; };
+		A61575AE226D60FD00904650 /* AirportTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirportTableViewCell.swift; sourceTree = "<group>"; };
+		A61575B0226D612C00904650 /* AirportTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AirportTableViewCell.xib; sourceTree = "<group>"; };
+		A61575B2226D618B00904650 /* BodaLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodaLabel.swift; sourceTree = "<group>"; };
+		A61575B5226D674C00904650 /* AirportPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirportPresentable.swift; sourceTree = "<group>"; };
+		A61575B8226D71E400904650 /* AirportSchedulesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirportSchedulesViewController.swift; sourceTree = "<group>"; };
+		A61575BA226D750C00904650 /* AirportSchedulesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirportSchedulesViewModel.swift; sourceTree = "<group>"; };
+		A61575BC226D753900904650 /* ViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelType.swift; sourceTree = "<group>"; };
+		A61575BE226D76B200904650 /* ObservableType+Tracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ObservableType+Tracker.swift"; sourceTree = "<group>"; };
+		A61575C0226D76FA00904650 /* ObservableType+Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ObservableType+Utility.swift"; sourceTree = "<group>"; };
+		A61575C2226D778300904650 /* ErrorTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorTracker.swift; sourceTree = "<group>"; };
+		A61575C4226D799D00904650 /* ApiProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiProvider.swift; sourceTree = "<group>"; };
+		A61575C6226D7C1F00904650 /* Schedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
+		A61575C8226D7F3800904650 /* Flight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flight.swift; sourceTree = "<group>"; };
+		A61575CA226D9FA700904650 /* AirportScheduleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirportScheduleTableViewCell.swift; sourceTree = "<group>"; };
+		A61575CC226DA01600904650 /* SchedulePresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchedulePresentable.swift; sourceTree = "<group>"; };
+		A61575CE226DA1A800904650 /* AirportScheduleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AirportScheduleTableViewCell.xib; sourceTree = "<group>"; };
+		A61575D1226DBF1600904650 /* ScheduleDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleDetailViewController.swift; sourceTree = "<group>"; };
 		A615E318226AFF4700640D94 /* BodaFlights.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BodaFlights.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A615E31B226AFF4700640D94 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A615E31D226AFF4700640D94 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -102,11 +138,9 @@
 		A615E37C226C653600640D94 /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
 		A615E37E226C654A00640D94 /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 		A615E380226C6A4200640D94 /* LufthansaName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LufthansaName.swift; sourceTree = "<group>"; };
-		A615E382226C7AAB00640D94 /* MoyaResponse+Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MoyaResponse+Utility.swift"; sourceTree = "<group>"; };
 		A615E384226CD80800640D94 /* BodaTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodaTextField.swift; sourceTree = "<group>"; };
 		A615E388226CDFCD00640D94 /* UIView+Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Utility.swift"; sourceTree = "<group>"; };
 		A615E38A226CE30D00640D94 /* IBInspectables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IBInspectables.swift; sourceTree = "<group>"; };
-		A615E38C226CE59F00640D94 /* BodaSearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodaSearchBar.swift; sourceTree = "<group>"; };
 		CEDF029CB8B16713BED110AB /* Pods-BodaFlightsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BodaFlightsUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BodaFlightsUITests/Pods-BodaFlightsUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		DBC5040B99054AA5B8177032 /* Pods-BodaFlights.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BodaFlights.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BodaFlights/Pods-BodaFlights.debug.xcconfig"; sourceTree = "<group>"; };
 		E00CC0007B6A44E179F9C978 /* Pods-BodaFlightsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BodaFlightsTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BodaFlightsTests/Pods-BodaFlightsTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -162,6 +196,37 @@
 				175920F9E73DE5DCE39B6E96 /* Pods_BodaFlightsUITests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A61575B4226D66F700904650 /* Airport Search */ = {
+			isa = PBXGroup;
+			children = (
+				A61575AC226D608100904650 /* AirportSearchViewController.swift */,
+				A61575AE226D60FD00904650 /* AirportTableViewCell.swift */,
+				A61575B0226D612C00904650 /* AirportTableViewCell.xib */,
+				A61575B5226D674C00904650 /* AirportPresentable.swift */,
+			);
+			path = "Airport Search";
+			sourceTree = "<group>";
+		};
+		A61575B7226D71A700904650 /* Schedules */ = {
+			isa = PBXGroup;
+			children = (
+				A61575B8226D71E400904650 /* AirportSchedulesViewController.swift */,
+				A61575BA226D750C00904650 /* AirportSchedulesViewModel.swift */,
+				A61575CA226D9FA700904650 /* AirportScheduleTableViewCell.swift */,
+				A61575CE226DA1A800904650 /* AirportScheduleTableViewCell.xib */,
+				A61575CC226DA01600904650 /* SchedulePresentable.swift */,
+			);
+			path = Schedules;
+			sourceTree = "<group>";
+		};
+		A61575D0226DBE3100904650 /* Schedule Detail */ = {
+			isa = PBXGroup;
+			children = (
+				A61575D1226DBF1600904650 /* ScheduleDetailViewController.swift */,
+			);
+			path = "Schedule Detail";
 			sourceTree = "<group>";
 		};
 		A615E30F226AFF4700640D94 = {
@@ -224,6 +289,9 @@
 				A615E373226C5F3C00640D94 /* Base */,
 				A615E374226C5F4300640D94 /* Login */,
 				A615E375226C5F4D00640D94 /* Home */,
+				A61575B4226D66F700904650 /* Airport Search */,
+				A61575B7226D71A700904650 /* Schedules */,
+				A61575D0226DBE3100904650 /* Schedule Detail */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -232,7 +300,7 @@
 			isa = PBXGroup;
 			children = (
 				A615E384226CD80800640D94 /* BodaTextField.swift */,
-				A615E38C226CE59F00640D94 /* BodaSearchBar.swift */,
+				A61575B2226D618B00904650 /* BodaLabel.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -272,6 +340,7 @@
 			isa = PBXGroup;
 			children = (
 				A615E358226B724C00640D94 /* LufthansaAPI.swift */,
+				A61575C4226D799D00904650 /* ApiProvider.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -293,9 +362,10 @@
 				A615E360226B748100640D94 /* UIColor+Utility.swift */,
 				A615E369226C3BA400640D94 /* UserDefaults+Utility.swift */,
 				A615E36F226C5AC800640D94 /* Date+Utility.swift */,
-				A615E382226C7AAB00640D94 /* MoyaResponse+Utility.swift */,
 				A615E388226CDFCD00640D94 /* UIView+Utility.swift */,
 				A615E38A226CE30D00640D94 /* IBInspectables.swift */,
+				A61575BE226D76B200904650 /* ObservableType+Tracker.swift */,
+				A61575C0226D76FA00904650 /* ObservableType+Utility.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -306,6 +376,8 @@
 				A615E35C226B73E800640D94 /* Logger.swift */,
 				A615E36B226C4B0200640D94 /* Inlines.swift */,
 				A615E371226C5D1C00640D94 /* Configurable.swift */,
+				A61575BC226D753900904650 /* ViewModelType.swift */,
+				A61575C2226D778300904650 /* ErrorTracker.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -318,6 +390,8 @@
 				A615E37C226C653600640D94 /* City.swift */,
 				A615E37E226C654A00640D94 /* Country.swift */,
 				A615E380226C6A4200640D94 /* LufthansaName.swift */,
+				A61575C6226D7C1F00904650 /* Schedule.swift */,
+				A61575C8226D7F3800904650 /* Flight.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -335,6 +409,7 @@
 			isa = PBXGroup;
 			children = (
 				A615E376226C5F6B00640D94 /* BaseViewController.swift */,
+				A61575AA226D5ECF00904650 /* SearchBaseViewController.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -465,8 +540,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				A615E326226AFF4800640D94 /* LaunchScreen.storyboard in Resources */,
+				A61575B1226D612C00904650 /* AirportTableViewCell.xib in Resources */,
 				A615E323226AFF4800640D94 /* Assets.xcassets in Resources */,
 				A615E321226AFF4700640D94 /* Main.storyboard in Resources */,
+				A61575CF226DA1A800904650 /* AirportScheduleTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -596,34 +673,49 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A61575B3226D618B00904650 /* BodaLabel.swift in Sources */,
 				A615E36C226C4B0200640D94 /* Inlines.swift in Sources */,
 				A615E31E226AFF4700640D94 /* LoginViewController.swift in Sources */,
 				A615E372226C5D1C00640D94 /* Configurable.swift in Sources */,
+				A61575CB226D9FA700904650 /* AirportScheduleTableViewCell.swift in Sources */,
 				A615E368226C2A4D00640D94 /* DataManager.swift in Sources */,
+				A61575C9226D7F3800904650 /* Flight.swift in Sources */,
 				A615E355226B1D4B00640D94 /* BodaError.swift in Sources */,
 				A615E37B226C652C00640D94 /* Airport.swift in Sources */,
+				A61575B9226D71E400904650 /* AirportSchedulesViewController.swift in Sources */,
+				A61575BD226D753900904650 /* ViewModelType.swift in Sources */,
+				A61575D2226DBF1600904650 /* ScheduleDetailViewController.swift in Sources */,
 				A615E377226C5F6B00640D94 /* BaseViewController.swift in Sources */,
-				A615E38D226CE59F00640D94 /* BodaSearchBar.swift in Sources */,
 				A615E31C226AFF4700640D94 /* AppDelegate.swift in Sources */,
 				A615E36E226C4E3100640D94 /* HomeViewController.swift in Sources */,
 				A615E36A226C3BA400640D94 /* UserDefaults+Utility.swift in Sources */,
 				A615E35F226B747600640D94 /* UIFont+Utility.swift in Sources */,
+				A61575C5226D799D00904650 /* ApiProvider.swift in Sources */,
 				A615E385226CD80800640D94 /* BodaTextField.swift in Sources */,
 				A615E359226B724C00640D94 /* LufthansaAPI.swift in Sources */,
 				A615E389226CDFCD00640D94 /* UIView+Utility.swift in Sources */,
 				A615E35D226B73E800640D94 /* Logger.swift in Sources */,
+				A61575CD226DA01600904650 /* SchedulePresentable.swift in Sources */,
+				A61575BF226D76B200904650 /* ObservableType+Tracker.swift in Sources */,
 				A615E38B226CE30D00640D94 /* IBInspectables.swift in Sources */,
 				A615E370226C5AC800640D94 /* Date+Utility.swift in Sources */,
 				A615E381226C6A4300640D94 /* LufthansaName.swift in Sources */,
 				A615E357226B1D8D00640D94 /* AppDefined.swift in Sources */,
 				A615E364226C23D800640D94 /* R.generated.swift in Sources */,
-				A615E383226C7AAB00640D94 /* MoyaResponse+Utility.swift in Sources */,
+				A61575BB226D750C00904650 /* AirportSchedulesViewModel.swift in Sources */,
+				A61575AD226D608100904650 /* AirportSearchViewController.swift in Sources */,
 				A615E35B226B72FF00640D94 /* UIViewController+Utility.swift in Sources */,
+				A61575B6226D674C00904650 /* AirportPresentable.swift in Sources */,
 				A615E379226C614700640D94 /* PersistenceManager.swift in Sources */,
 				A615E37F226C654A00640D94 /* Country.swift in Sources */,
+				A61575C1226D76FA00904650 /* ObservableType+Utility.swift in Sources */,
 				A615E361226B748100640D94 /* UIColor+Utility.swift in Sources */,
+				A61575C3226D778300904650 /* ErrorTracker.swift in Sources */,
 				A615E366226C287D00640D94 /* PaginationInfo.swift in Sources */,
+				A61575AB226D5ECF00904650 /* SearchBaseViewController.swift in Sources */,
 				A615E37D226C653600640D94 /* City.swift in Sources */,
+				A61575C7226D7C1F00904650 /* Schedule.swift in Sources */,
+				A61575AF226D60FD00904650 /* AirportTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

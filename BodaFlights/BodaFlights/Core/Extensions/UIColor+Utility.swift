@@ -17,6 +17,7 @@ extension UIColor {
         static let lightGrayLine = UIColor.colorWithHexString("E1E1E1")
         static let brown = UIColor.colorWithHexString("26211A")
         static let gray = UIColor.colorWithHexString("F2F4F5")
+        static let bodaTitle = UIColor.colorWithHexString("56636D")
     }
     
     class func rgba(_ red: CGFloat, green: CGFloat, blue: CGFloat, alpha: CGFloat) -> UIColor {

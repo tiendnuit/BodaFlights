@@ -28,6 +28,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         navigationBarAppearace.barTintColor = UIColor.BodaColors.orange
         navigationBarAppearace.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white, NSAttributedString.Key.font: UIFont.BodaFonts.boldS20]
         
+        let appearance = UIBarButtonItem.appearance(whenContainedInInstancesOf: [UISearchBar.self])
+        appearance.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.white], for: .normal)
+        
         //Log
         log.level = .debug
         return true

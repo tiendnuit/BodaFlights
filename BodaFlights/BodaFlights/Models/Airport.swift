@@ -17,9 +17,21 @@ class Airport: Codable {
     var country: Country?
     var timezone: String
     
+    //Airport name
     var name: String {
+        return lhName.value
+    }
+    
+    //Airport name and address
+    var fullName: String {
         return [lhName.value, city?.name, country?.name].compactMap { $0 }.joined(separator: " ,")
     }
+    
+    //City, Country
+    var address: String {
+        return [city?.name, country?.name].compactMap { $0 }.joined(separator: " ,")
+    }
+    
     private var lhName: LufthansaName
     enum CodingKeys: String, CodingKey {
         case code = "AirportCode"

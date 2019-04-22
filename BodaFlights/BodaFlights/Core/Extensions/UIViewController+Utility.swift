@@ -16,14 +16,14 @@ extension UIViewController {
     }
     
     @IBAction func closeTapped() {
-        dismiss(animated: true, completion: nil)
+        dismiss()
     }
     
     @IBAction func leftButtonTapped() {
         dismiss(animated: true, completion: nil)
     }
     
-    func addCloseButton(with image: UIImage? = #imageLiteral(resourceName: "ArrowBack")) {
+    func addCloseButton(with image: UIImage? = #imageLiteral(resourceName: "btn-back")) {
         let closeButtonItem = UIBarButtonItem(image: image?.withRenderingMode(.alwaysOriginal),
                                               style: .plain,
                                               target: self,

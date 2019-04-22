@@ -17,7 +17,7 @@ public struct PaginationInfo {
         return ["offset": offset, "limit": limit, "lang": languague]
     }
     
-    init(offset: Int, limit: Int = AppDefined.LufthansaApi.ITEMS_PER_PAGE) {
+    init(offset: Int = 0, limit: Int = AppDefined.LufthansaApi.ITEMS_PER_PAGE) {
         self.offset = offset
         self.limit = limit
     }

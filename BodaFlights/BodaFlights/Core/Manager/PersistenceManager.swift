@@ -23,6 +23,10 @@ class PersistenceManager {
     private var airports = [Airport]()
     
     var onUpdatedAirports: ((BodaError?) -> ())?
+    
+    func searchAirports(_ searchText: String) -> [Airport] {
+        return airports.filter { $0.fullName.lowercased().contains(searchText.lowercased()) }
+    }
 }
 
 //MARK: -

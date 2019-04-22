@@ -36,3 +36,13 @@ extension Date {
         return Calendar.current.date(byAdding: .year, value: years, to: self)!
     }
 }
+
+//MARK: - DateFormatter
+extension DateFormatter {
+    static let LufthansaDateFormatter: DateFormatter = {    //yyyy-MM-ddTHH:mm:ss
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm"
+        formatter.locale = Locale(identifier: "en_US_POSIX")
+        return formatter
+    }()
+}
