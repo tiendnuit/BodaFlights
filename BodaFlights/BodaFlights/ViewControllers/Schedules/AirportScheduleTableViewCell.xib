@@ -19,10 +19,10 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bOr-rQ-Xuu">
-                        <rect key="frame" x="8" y="8" width="398" height="103.5"/>
+                        <rect key="frame" x="8" y="4" width="398" height="111.5"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="hWJ-6R-07a">
-                                <rect key="frame" x="16" y="12" width="366" height="79.5"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="hWJ-6R-07a">
+                                <rect key="frame" x="16" y="18.5" width="366" height="74.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="DWE-HI-Wj0">
                                         <rect key="frame" x="0.0" y="0.0" width="366" height="21.5"/>
@@ -36,25 +36,25 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Foy-0J-nfC" customClass="BodaSemiBoldTitleLabel" customModule="BodaFlights" customModuleProvider="target">
                                                 <rect key="frame" x="68" y="0.0" width="298" height="21.5"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
-                                                <nil key="textColor"/>
+                                                <color key="textColor" red="0.035294117649999998" green="0.84705882349999995" blue="0.63137254899999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="HiZ-Pk-mdc">
-                                        <rect key="frame" x="0.0" y="31.5" width="366" height="48"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="HiZ-Pk-mdc">
+                                        <rect key="frame" x="0.0" y="26.5" width="366" height="48"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="TBe-c8-QXX">
-                                                <rect key="frame" x="0.0" y="0.0" width="51.5" height="48"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="115.5" height="48"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qoF-k6-m58" customClass="BodaSemiBoldTitleLabel" customModule="BodaFlights" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="51.5" height="21.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="115.5" height="21.5"/>
                                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SYD" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5AZ-iB-q2Z" customClass="BodaSmallBoldLabel" customModule="BodaFlights" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="26.5" width="51.5" height="21.5"/>
+                                                        <rect key="frame" x="0.0" y="26.5" width="115.5" height="21.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -62,13 +62,13 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Swj-Ci-ARQ">
-                                                <rect key="frame" x="61.5" y="0.0" width="31.5" height="48"/>
+                                                <rect key="frame" x="125.5" y="0.0" width="115" height="48"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-flight-arrival" translatesAutoresizingMaskIntoConstraints="NO" id="q12-RG-0m0">
-                                                        <rect key="frame" x="0.0" y="0.0" width="31.5" height="21.5"/>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-small-flight2" translatesAutoresizingMaskIntoConstraints="NO" id="q12-RG-0m0">
+                                                        <rect key="frame" x="0.0" y="0.0" width="115" height="21.5"/>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UJ4-de-dYG" customClass="BodaSmallLightLabel" customModule="BodaFlights" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="26.5" width="31.5" height="21.5"/>
+                                                        <rect key="frame" x="0.0" y="26.5" width="115" height="21.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -76,28 +76,22 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="epw-cx-vKq">
-                                                <rect key="frame" x="103" y="0.0" width="51.5" height="48"/>
+                                                <rect key="frame" x="250.5" y="0.0" width="115.5" height="48"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t9x-XC-lnD" customClass="BodaSemiBoldTitleLabel" customModule="BodaFlights" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="51.5" height="21.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="115.5" height="21.5"/>
                                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SYD" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VwP-ct-k6a" customClass="BodaSmallBoldLabel" customModule="BodaFlights" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="26.5" width="51.5" height="21.5"/>
+                                                        <rect key="frame" x="0.0" y="26.5" width="115.5" height="21.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
                                             </stackView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 transit" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FAV-mT-TCQ" customClass="BodaSmallLightLabel" customModule="BodaFlights" customModuleProvider="target">
-                                                <rect key="frame" x="164.5" y="0.0" width="201.5" height="48"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
                                         </subviews>
                                     </stackView>
                                 </subviews>
@@ -122,14 +116,15 @@
                         </userDefinedRuntimeAttributes>
                     </view>
                 </subviews>
-                <color key="backgroundColor" red="0.88235294119999996" green="0.88235294119999996" blue="0.88235294119999996" alpha="1" colorSpace="calibratedRGB"/>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="bOr-rQ-Xuu" secondAttribute="trailing" constant="8" id="5xZ-RG-3qT"/>
                     <constraint firstItem="bOr-rQ-Xuu" firstAttribute="leading" secondItem="ETo-6h-Oaz" secondAttribute="leading" constant="8" id="Pvg-jF-ByS"/>
-                    <constraint firstItem="bOr-rQ-Xuu" firstAttribute="top" secondItem="ETo-6h-Oaz" secondAttribute="top" constant="8" id="ZxK-Zn-mhz"/>
-                    <constraint firstAttribute="bottom" secondItem="bOr-rQ-Xuu" secondAttribute="bottom" constant="8" id="jbI-RB-N6A"/>
+                    <constraint firstItem="bOr-rQ-Xuu" firstAttribute="top" secondItem="ETo-6h-Oaz" secondAttribute="top" constant="4" id="ZxK-Zn-mhz"/>
+                    <constraint firstAttribute="bottom" secondItem="bOr-rQ-Xuu" secondAttribute="bottom" constant="4" id="jbI-RB-N6A"/>
                 </constraints>
             </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
                 <outlet property="arrivalCodeLabel" destination="VwP-ct-k6a" id="fUJ-Ik-SaC"/>
                 <outlet property="arrivalTimeLabel" destination="t9x-XC-lnD" id="AJr-QE-NRh"/>
@@ -137,12 +132,11 @@
                 <outlet property="departTimeLabel" destination="qoF-k6-m58" id="5rN-5h-OcN"/>
                 <outlet property="durationLabel" destination="UJ4-de-dYG" id="0NY-s4-bIO"/>
                 <outlet property="flightNoLabel" destination="Foy-0J-nfC" id="sFr-SS-1bt"/>
-                <outlet property="transitLabel" destination="FAV-mT-TCQ" id="jM4-4j-D29"/>
             </connections>
             <point key="canvasLocation" x="14" y="53"/>
         </tableViewCell>
     </objects>
     <resources>
-        <image name="icon-flight-arrival" width="20" height="14"/>
+        <image name="icon-small-flight2" width="24" height="18"/>
     </resources>
 </document>

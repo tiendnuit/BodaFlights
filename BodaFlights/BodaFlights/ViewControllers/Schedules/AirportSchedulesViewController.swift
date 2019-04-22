@@ -11,11 +11,15 @@ import UIKit
 import SVProgressHUD
 import RxSwift
 import RxCocoa
+import RxDataSources
+import DZNEmptyDataSet
 
 class AirportSchedulesViewController: BaseViewController {
     @IBOutlet weak var tableView: UITableView!
     var viewModel: AirportSchedulesViewModel!
+    var dataSource: RxTableViewSectionedReloadDataSource<ScheduleSection>!
     
+    private let headerIdentifier = "ScheduleHeaderIdentifier"
     private var selectedSchedule: Schedule?
     //MARK: - View cycle
     override func viewDidLoad() {
@@ -32,16 +36,9 @@ class AirportSchedulesViewController: BaseViewController {
         
     }
     
-    //MARK: -
-    override func setupComponents() {
-        //Navigations
-        title = "\(viewModel.scheduleTitle)"
-        addCloseButton()
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         
-        tableView.register(R.nib.airportScheduleTableViewCell)
-        tableView.dataSource = nil
-        tableView.rowHeight = 100
-        //
         //Refresh control
         tableView.refreshControl = UIRefreshControl()
         tableView.refreshControl!.rx
@@ -50,13 +47,47 @@ class AirportSchedulesViewController: BaseViewController {
                 self.fetchFirstPage()
             }, onError: nil, onCompleted: nil, onDisposed: nil)
             .disposed(by: disposeBag)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let vc = R.segue.airportSchedulesViewController.toDetail(segue: segue)?.destination, let selectedSchedule = selectedSchedule {
+            vc.schedule = selectedSchedule
+        }
+    }
+    
+    //MARK: -
+    override func setupComponents() {
+        //Navigations
+        title = "\(viewModel.scheduleTitle)"
+        addCloseButton()
         
+        //TableView
+        tableView.emptyDataSetSource = self
+        tableView.emptyDataSetDelegate = self
+        tableView.register(R.nib.airportScheduleTableViewCell)
+        tableView.register(UINib(resource: R.nib.scheduleHeaderView), forHeaderFooterViewReuseIdentifier: headerIdentifier)
+        tableView.dataSource = nil
+        tableView.delegate = self
+        tableView.rowHeight = 100
         
+        dataSource = RxTableViewSectionedReloadDataSource<ScheduleSection>(configureCell: { (ds, tbv, indexPath, item) -> AirportScheduleTableViewCell in
+            let cell = tbv.dequeueReusableCell(withIdentifier: R.reuseIdentifier.airportScheduleTableViewCell, for: indexPath)!
+            cell.selectionStyle = .none
+            cell.configure(item: item)
+            return cell
+        })
+        
+        dataSource.titleForHeaderInSection = { ds, index in
+            return ds.sectionModels[index].header
+        }
+        
+        //
         //Selected cell
-        tableView.rx.modelSelected(Schedule.self)
-            .subscribe(onNext: { [weak self] feed in
-                self?.selectedSchedule = feed
-                //self?.performSegue(withIdentifier: R.segue.activityViewController.toDetail, sender: nil)
+        tableView.rx.itemSelected
+            .subscribe(onNext: { [weak self] indexPath in
+                guard let `self` = self else { return }
+                self.selectedSchedule = self.viewModel.schedule(at: indexPath.section)
+                self.performSegue(withIdentifier: R.segue.airportSchedulesViewController.toDetail, sender: nil)
             }).disposed(by: disposeBag)
         
         //Reach bottom
@@ -95,13 +126,8 @@ class AirportSchedulesViewController: BaseViewController {
         let output = viewModel.transform(input: input)
         
         //Update tableview
-        
-        output.dataSource.drive(tableView.rx.items) { tableView, row, flight in
-            let indexPath = IndexPath(row: row, section: 0)
-            let cell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.airportScheduleTableViewCell, for: indexPath)!
-            cell.configure(item: flight)
-            return cell
-            }.disposed(by: disposeBag)
+        output.dataSource.drive(tableView.rx.items(dataSource: dataSource))
+            .disposed(by: disposeBag)
 
         //API error
         output.error.drive(onNext: { (error) in
@@ -112,6 +138,7 @@ class AirportSchedulesViewController: BaseViewController {
         //Loading
         output.loading.drive(onNext: {[weak self] (loading) in
             if !loading {
+                SVProgressHUD.dismiss()
                 self?.tableView.refreshControl?.endRefreshing()
             }
             }, onCompleted: nil, onDisposed: nil)
@@ -132,6 +159,46 @@ class AirportSchedulesViewController: BaseViewController {
     }
     
     @objc dynamic func getSchedules() {
-        self.tableView.refreshControl?.beginRefreshing()
+        if let refreshControl = tableView.refreshControl {
+            refreshControl.beginRefreshing()
+        } else {
+            SVProgressHUD.show()
+        }
+    }
+}
+
+//MARK: - UITableViewDelegate
+extension AirportSchedulesViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        if let header = view as? UITableViewHeaderFooterView {
+            header.backgroundView?.backgroundColor = UIColor.white
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let schedule = viewModel.schedule(at: section)
+        let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: headerIdentifier) as! ScheduleHeaderView
+        headerView.configure(item: schedule)
+        
+        return headerView
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 50
+    }
+}
+
+// MARK: - DZNEmptyDataSetSource, DZNEmptyDataSetDelegate
+extension AirportSchedulesViewController: DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
+    func description(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
+        let text = "No flights available"
+        let paragraph = NSMutableParagraphStyle()
+        paragraph.lineBreakMode = .byWordWrapping
+        paragraph.alignment = .center
+        let textFont = UIFont.BodaFonts.semiBoldS18
+        let attributes = [NSAttributedString.Key.font: textFont,
+                          NSAttributedString.Key.foregroundColor: UIColor.BodaColors.bodaTitle,
+                          NSAttributedString.Key.paragraphStyle: paragraph]
+        return NSAttributedString(string: text, attributes: attributes)
     }
 }

@@ -1,5 +1,5 @@
 //
-//  SchedulePresentable.swift
+//  FlightPresentable.swift
 //  BodaFlights
 //
 //  Created by Scor Doan on 4/22/19.
@@ -16,13 +16,13 @@ protocol FlightPresentable {
     var departTimeLabel: UILabel! {set get}
     var arrivalCodeLabel: UILabel! {set get}
     var arrivalTimeLabel: UILabel! {set get}
-    var transitLabel: UILabel! {set get}
 }
 
 extension FlightPresentable {
     func map(flight: Flight?) {
         guard let flight = flight else { return }
         
+        flightNoLabel.textColor = UIColor.BodaColors.green
         flightNoLabel.text = "\(flight.number)"
         durationLabel.text = flight.duration
         departCodeLabel.text = flight.departureCode

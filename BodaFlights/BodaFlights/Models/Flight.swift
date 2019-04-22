@@ -55,6 +55,10 @@ class Flight: Codable {
         //MarketingCarrier
         let marketingContainer = try flightContainer.nestedContainer(keyedBy: MarketingCarrierKeys.self, forKey: .marketingCarrier)
         number = try marketingContainer.decode(Int.self, forKey: .flightNumber)
+        
+        if let arrivalTime = arrivalTime, let departureTime = departureTime {
+            duration = getTimeComponentString(olderDate: departureTime, newerDate: arrivalTime) ?? "n/a"
+        }
     }
     
 //    public func encode(to encoder: Encoder) throws {

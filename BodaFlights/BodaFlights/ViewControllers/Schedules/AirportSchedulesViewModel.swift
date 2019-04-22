@@ -9,14 +9,44 @@
 import Foundation
 import RxSwift
 import RxCocoa
+import RxDataSources
 
+//MARK: -
+struct ScheduleSection {
+    var schedule: Schedule
+    var header: String
+    var items: [Flight]
+    
+    init(schedule: Schedule) {
+        self.schedule = schedule
+        self.header = ""
+        self.items = schedule.flights
+    }
+}
+
+extension ScheduleSection: SectionModelType {
+    typealias Item = Flight
+    
+    init(original: ScheduleSection, items: [Item]) {
+        self = original
+        self.items = items
+    }
+    
+//    init(original: ScheduleSection, schedule: Schedule) {
+//        self = original
+//        self.schedule = schedule
+//        self.items = schedule.flights
+//    }
+}
+
+//MARK: AirportSchedulesViewModel
 final class AirportSchedulesViewModel: ViewModelType {
     
     private var departureAirport: Airport!
     private var arrivalAirport: Airport!
     private var paginationInfo = PaginationInfo()
-    private var schedules = [Schedule]()
-    private var flights = [Flight]()
+    private var schedules = [ScheduleSection]()
+    //private var flights = [Flight]()
     
     var scheduleTitle: String {
         return "\(departureAirport.code) - \(arrivalAirport.code)"
@@ -39,11 +69,11 @@ final class AirportSchedulesViewModel: ViewModelType {
                     .trackActivity(activityIndicator)
                     .trackError(errorTracker)
                     .asDriverOnErrorJustComplete()
-            }.flatMap { (schedules) -> SharedSequence<DriverSharingStrategy, [Flight]> in
+            }.flatMap { (schedules) -> SharedSequence<DriverSharingStrategy, [ScheduleSection]> in
                 self.reachedBottom = schedules.isEmpty
-                self.schedules.append(contentsOf: schedules)
-                self.flights.append(contentsOf: schedules.flatMap {$0.flights})
-                return Observable.just(self.flights)
+                let scheduleSections = schedules.map { ScheduleSection(schedule: $0) }
+                self.schedules.append(contentsOf: scheduleSections)
+                return Observable.just(self.schedules)
                     .asDriverOnErrorJustComplete()
             }
         
@@ -55,13 +85,21 @@ final class AirportSchedulesViewModel: ViewModelType {
     
     func reset() {
         schedules = []
-        flights = []
         paginationInfo = PaginationInfo()
         reachedBottom = false
     }
     
+    func schedule(at section: Int) -> Schedule {
+        return schedules[section].schedule
+    }
+    
     func canLoadMore(with indexPath: IndexPath) -> Bool {
-        guard indexPath.row == flights.count - 1, reachedBottom == false else { return false }
+        //makre sure last section
+        guard indexPath.section == schedules.count - 1, reachedBottom == false else { return false }
+        
+        let lastSection = schedules[indexPath.section]
+        //make sure last row
+        guard indexPath.row == lastSection.items.count - 1 else { return false }
         
         return true
     }
@@ -74,7 +112,7 @@ extension AirportSchedulesViewModel {
     }
     
     struct Output {
-        let dataSource: Driver<[Flight]>
+        let dataSource: Driver<[ScheduleSection]>
         let error: Driver<Error>
         let loading:Driver<Bool>
     }

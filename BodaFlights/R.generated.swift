@@ -16,16 +16,48 @@ struct R: Rswift.Validatable {
     try intern.validate()
   }
   
-  /// This `R.image` struct is generated, and contains static references to 4 images.
+  /// This `R.file` struct is generated, and contains static references to 1 files.
+  struct file {
+    /// Resource file `airports_data`.
+    static let airports_data = Rswift.FileResource(bundle: R.hostingBundle, name: "airports_data", pathExtension: "")
+    
+    /// `bundle.url(forResource: "airports_data", withExtension: "")`
+    static func airports_data(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.airports_data
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+    
+    fileprivate init() {}
+  }
+  
+  /// This `R.image` struct is generated, and contains static references to 13 images.
   struct image {
     /// Image `bg-search`.
     static let bgSearch = Rswift.ImageResource(bundle: R.hostingBundle, name: "bg-search")
     /// Image `btn-back`.
     static let btnBack = Rswift.ImageResource(bundle: R.hostingBundle, name: "btn-back")
+    /// Image `btn-close`.
+    static let btnClose = Rswift.ImageResource(bundle: R.hostingBundle, name: "btn-close")
+    /// Image `icon-arrive-pin`.
+    static let iconArrivePin = Rswift.ImageResource(bundle: R.hostingBundle, name: "icon-arrive-pin")
+    /// Image `icon-depart-pin`.
+    static let iconDepartPin = Rswift.ImageResource(bundle: R.hostingBundle, name: "icon-depart-pin")
     /// Image `icon-flight-arrival`.
     static let iconFlightArrival = Rswift.ImageResource(bundle: R.hostingBundle, name: "icon-flight-arrival")
     /// Image `icon-flight-departures`.
     static let iconFlightDepartures = Rswift.ImageResource(bundle: R.hostingBundle, name: "icon-flight-departures")
+    /// Image `icon-flight`.
+    static let iconFlight = Rswift.ImageResource(bundle: R.hostingBundle, name: "icon-flight")
+    /// Image `icon-large-transit-pin`.
+    static let iconLargeTransitPin = Rswift.ImageResource(bundle: R.hostingBundle, name: "icon-large-transit-pin")
+    /// Image `icon-small-flight2`.
+    static let iconSmallFlight2 = Rswift.ImageResource(bundle: R.hostingBundle, name: "icon-small-flight2")
+    /// Image `icon-small-flight`.
+    static let iconSmallFlight = Rswift.ImageResource(bundle: R.hostingBundle, name: "icon-small-flight")
+    /// Image `icon-trans-bodaflights`.
+    static let iconTransBodaflights = Rswift.ImageResource(bundle: R.hostingBundle, name: "icon-trans-bodaflights")
+    /// Image `icon-transit-pin`.
+    static let iconTransitPin = Rswift.ImageResource(bundle: R.hostingBundle, name: "icon-transit-pin")
     
     /// `UIImage(named: "bg-search", bundle: ..., traitCollection: ...)`
     static func bgSearch(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
@@ -35,6 +67,26 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "btn-back", bundle: ..., traitCollection: ...)`
     static func btnBack(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.btnBack, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "btn-close", bundle: ..., traitCollection: ...)`
+    static func btnClose(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.btnClose, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "icon-arrive-pin", bundle: ..., traitCollection: ...)`
+    static func iconArrivePin(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.iconArrivePin, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "icon-depart-pin", bundle: ..., traitCollection: ...)`
+    static func iconDepartPin(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.iconDepartPin, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "icon-flight", bundle: ..., traitCollection: ...)`
+    static func iconFlight(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.iconFlight, compatibleWith: traitCollection)
     }
     
     /// `UIImage(named: "icon-flight-arrival", bundle: ..., traitCollection: ...)`
@@ -47,15 +99,42 @@ struct R: Rswift.Validatable {
       return UIKit.UIImage(resource: R.image.iconFlightDepartures, compatibleWith: traitCollection)
     }
     
+    /// `UIImage(named: "icon-large-transit-pin", bundle: ..., traitCollection: ...)`
+    static func iconLargeTransitPin(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.iconLargeTransitPin, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "icon-small-flight", bundle: ..., traitCollection: ...)`
+    static func iconSmallFlight(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.iconSmallFlight, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "icon-small-flight2", bundle: ..., traitCollection: ...)`
+    static func iconSmallFlight2(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.iconSmallFlight2, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "icon-trans-bodaflights", bundle: ..., traitCollection: ...)`
+    static func iconTransBodaflights(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.iconTransBodaflights, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "icon-transit-pin", bundle: ..., traitCollection: ...)`
+    static func iconTransitPin(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.iconTransitPin, compatibleWith: traitCollection)
+    }
+    
     fileprivate init() {}
   }
   
-  /// This `R.nib` struct is generated, and contains static references to 2 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 3 nibs.
   struct nib {
     /// Nib `AirportScheduleTableViewCell`.
     static let airportScheduleTableViewCell = _R.nib._AirportScheduleTableViewCell()
     /// Nib `AirportTableViewCell`.
     static let airportTableViewCell = _R.nib._AirportTableViewCell()
+    /// Nib `ScheduleHeaderView`.
+    static let scheduleHeaderView = _R.nib._ScheduleHeaderView()
     
     /// `UINib(name: "AirportScheduleTableViewCell", in: bundle)`
     @available(*, deprecated, message: "Use UINib(resource: R.nib.airportScheduleTableViewCell) instead")
@@ -69,12 +148,22 @@ struct R: Rswift.Validatable {
       return UIKit.UINib(resource: R.nib.airportTableViewCell)
     }
     
+    /// `UINib(name: "ScheduleHeaderView", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.scheduleHeaderView) instead")
+    static func scheduleHeaderView(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.scheduleHeaderView)
+    }
+    
     static func airportScheduleTableViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> AirportScheduleTableViewCell? {
       return R.nib.airportScheduleTableViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? AirportScheduleTableViewCell
     }
     
     static func airportTableViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> AirportTableViewCell? {
       return R.nib.airportTableViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? AirportTableViewCell
+    }
+    
+    static func scheduleHeaderView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> ScheduleHeaderView? {
+      return R.nib.scheduleHeaderView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? ScheduleHeaderView
     }
     
     fileprivate init() {}
@@ -90,8 +179,23 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.segue` struct is generated, and contains static references to 1 view controllers.
+  /// This `R.segue` struct is generated, and contains static references to 2 view controllers.
   struct segue {
+    /// This struct is generated for `AirportSchedulesViewController`, and contains static references to 1 segues.
+    struct airportSchedulesViewController {
+      /// Segue identifier `ToDetail`.
+      static let toDetail: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, AirportSchedulesViewController, MapViewController> = Rswift.StoryboardSegueIdentifier(identifier: "ToDetail")
+      
+      /// Optionally returns a typed version of segue `ToDetail`.
+      /// Returns nil if either the segue identifier, the source, destination, or segue types don't match.
+      /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
+      static func toDetail(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, AirportSchedulesViewController, MapViewController>? {
+        return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.airportSchedulesViewController.toDetail, segue: segue)
+      }
+      
+      fileprivate init() {}
+    }
+    
     /// This struct is generated for `HomeViewController`, and contains static references to 2 segues.
     struct homeViewController {
       /// Segue identifier `ToLogin`.
@@ -161,6 +265,7 @@ struct _R: Rswift.Validatable {
   struct nib: Rswift.Validatable {
     static func validate() throws {
       try _AirportScheduleTableViewCell.validate()
+      try _ScheduleHeaderView.validate()
     }
     
     struct _AirportScheduleTableViewCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType, Rswift.Validatable {
@@ -175,7 +280,7 @@ struct _R: Rswift.Validatable {
       }
       
       static func validate() throws {
-        if UIKit.UIImage(named: "icon-flight-arrival", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'icon-flight-arrival' is used in nib 'AirportScheduleTableViewCell', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "icon-small-flight2", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'icon-small-flight2' is used in nib 'AirportScheduleTableViewCell', but couldn't be loaded.") }
         if #available(iOS 11.0, *) {
         }
       }
@@ -197,6 +302,23 @@ struct _R: Rswift.Validatable {
       fileprivate init() {}
     }
     
+    struct _ScheduleHeaderView: Rswift.NibResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "ScheduleHeaderView"
+      
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> ScheduleHeaderView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? ScheduleHeaderView
+      }
+      
+      static func validate() throws {
+        if UIKit.UIImage(named: "icon-flight", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'icon-flight' is used in nib 'ScheduleHeaderView', but couldn't be loaded.") }
+        if #available(iOS 11.0, *) {
+        }
+      }
+      
+      fileprivate init() {}
+    }
+    
     fileprivate init() {}
   }
   
@@ -213,6 +335,7 @@ struct _R: Rswift.Validatable {
       let name = "LaunchScreen"
       
       static func validate() throws {
+        if UIKit.UIImage(named: "icon-trans-bodaflights", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'icon-trans-bodaflights' is used in storyboard 'LaunchScreen', but couldn't be loaded.") }
         if #available(iOS 11.0, *) {
         }
       }
@@ -228,6 +351,7 @@ struct _R: Rswift.Validatable {
       let bundle = R.hostingBundle
       let homeViewController = StoryboardViewControllerResource<HomeViewController>(identifier: "HomeViewController")
       let loginViewController = StoryboardViewControllerResource<LoginViewController>(identifier: "LoginViewController")
+      let mapViewController = StoryboardViewControllerResource<MapViewController>(identifier: "MapViewController")
       let name = "Main"
       
       func airportSchedulesViewController(_: Void = ()) -> AirportSchedulesViewController? {
@@ -246,7 +370,12 @@ struct _R: Rswift.Validatable {
         return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: loginViewController)
       }
       
+      func mapViewController(_: Void = ()) -> MapViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: mapViewController)
+      }
+      
       static func validate() throws {
+        if UIKit.UIImage(named: "btn-close", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'btn-close' is used in storyboard 'Main', but couldn't be loaded.") }
         if UIKit.UIImage(named: "icon-flight-arrival", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'icon-flight-arrival' is used in storyboard 'Main', but couldn't be loaded.") }
         if UIKit.UIImage(named: "icon-flight-departures", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'icon-flight-departures' is used in storyboard 'Main', but couldn't be loaded.") }
         if #available(iOS 11.0, *) {
@@ -255,6 +384,7 @@ struct _R: Rswift.Validatable {
         if _R.storyboard.main().airportSearchViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'airportSearchViewController' could not be loaded from storyboard 'Main' as 'AirportSearchViewController'.") }
         if _R.storyboard.main().homeViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'homeViewController' could not be loaded from storyboard 'Main' as 'HomeViewController'.") }
         if _R.storyboard.main().loginViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'loginViewController' could not be loaded from storyboard 'Main' as 'LoginViewController'.") }
+        if _R.storyboard.main().mapViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'mapViewController' could not be loaded from storyboard 'Main' as 'MapViewController'.") }
       }
       
       fileprivate init() {}

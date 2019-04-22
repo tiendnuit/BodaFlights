@@ -24,9 +24,8 @@
 		A61575C7226D7C1F00904650 /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61575C6226D7C1F00904650 /* Schedule.swift */; };
 		A61575C9226D7F3800904650 /* Flight.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61575C8226D7F3800904650 /* Flight.swift */; };
 		A61575CB226D9FA700904650 /* AirportScheduleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61575CA226D9FA700904650 /* AirportScheduleTableViewCell.swift */; };
-		A61575CD226DA01600904650 /* SchedulePresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61575CC226DA01600904650 /* SchedulePresentable.swift */; };
+		A61575CD226DA01600904650 /* FlightPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61575CC226DA01600904650 /* FlightPresentable.swift */; };
 		A61575CF226DA1A800904650 /* AirportScheduleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A61575CE226DA1A800904650 /* AirportScheduleTableViewCell.xib */; };
-		A61575D2226DBF1600904650 /* ScheduleDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61575D1226DBF1600904650 /* ScheduleDetailViewController.swift */; };
 		A615E31C226AFF4700640D94 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A615E31B226AFF4700640D94 /* AppDelegate.swift */; };
 		A615E31E226AFF4700640D94 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A615E31D226AFF4700640D94 /* LoginViewController.swift */; };
 		A615E321226AFF4700640D94 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A615E31F226AFF4700640D94 /* Main.storyboard */; };
@@ -58,6 +57,13 @@
 		A615E385226CD80800640D94 /* BodaTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A615E384226CD80800640D94 /* BodaTextField.swift */; };
 		A615E389226CDFCD00640D94 /* UIView+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = A615E388226CDFCD00640D94 /* UIView+Utility.swift */; };
 		A615E38B226CE30D00640D94 /* IBInspectables.swift in Sources */ = {isa = PBXBuildFile; fileRef = A615E38A226CE30D00640D94 /* IBInspectables.swift */; };
+		A691E286226DD4C800DC1E77 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = A691E285226DD4C800DC1E77 /* Location.swift */; };
+		A6AF5EC7226DF9BD00EA0686 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6AF5EC6226DF9BD00EA0686 /* MapViewController.swift */; };
+		A6AF5EC9226E0ABD00EA0686 /* ScheduleHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6AF5EC8226E0ABD00EA0686 /* ScheduleHeaderView.swift */; };
+		A6AF5ECC226E0CEA00EA0686 /* ScheduleHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6AF5ECB226E0CEA00EA0686 /* ScheduleHeaderView.xib */; };
+		A6AF5ECE226E0E6800EA0686 /* SchedulePresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6AF5ECD226E0E6800EA0686 /* SchedulePresentable.swift */; };
+		A6AF5ED0226E0FE200EA0686 /* UIStackView+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6AF5ECF226E0FE200EA0686 /* UIStackView+Utility.swift */; };
+		A6F93E1F226E429100982563 /* airports_data in Resources */ = {isa = PBXBuildFile; fileRef = A6F93E1E226E429000982563 /* airports_data */; };
 		DAB9AFB38D32E8F0BE1F4060 /* Pods_BodaFlightsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 175920F9E73DE5DCE39B6E96 /* Pods_BodaFlightsUITests.framework */; };
 		E472459DF043DC9123696CA7 /* Pods_BodaFlightsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8582A505C497715C0BE238BD /* Pods_BodaFlightsTests.framework */; };
 /* End PBXBuildFile section */
@@ -101,9 +107,8 @@
 		A61575C6226D7C1F00904650 /* Schedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
 		A61575C8226D7F3800904650 /* Flight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flight.swift; sourceTree = "<group>"; };
 		A61575CA226D9FA700904650 /* AirportScheduleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirportScheduleTableViewCell.swift; sourceTree = "<group>"; };
-		A61575CC226DA01600904650 /* SchedulePresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchedulePresentable.swift; sourceTree = "<group>"; };
+		A61575CC226DA01600904650 /* FlightPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightPresentable.swift; sourceTree = "<group>"; };
 		A61575CE226DA1A800904650 /* AirportScheduleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AirportScheduleTableViewCell.xib; sourceTree = "<group>"; };
-		A61575D1226DBF1600904650 /* ScheduleDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleDetailViewController.swift; sourceTree = "<group>"; };
 		A615E318226AFF4700640D94 /* BodaFlights.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BodaFlights.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A615E31B226AFF4700640D94 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A615E31D226AFF4700640D94 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -141,6 +146,13 @@
 		A615E384226CD80800640D94 /* BodaTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodaTextField.swift; sourceTree = "<group>"; };
 		A615E388226CDFCD00640D94 /* UIView+Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Utility.swift"; sourceTree = "<group>"; };
 		A615E38A226CE30D00640D94 /* IBInspectables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IBInspectables.swift; sourceTree = "<group>"; };
+		A691E285226DD4C800DC1E77 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		A6AF5EC6226DF9BD00EA0686 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		A6AF5EC8226E0ABD00EA0686 /* ScheduleHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleHeaderView.swift; sourceTree = "<group>"; };
+		A6AF5ECB226E0CEA00EA0686 /* ScheduleHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScheduleHeaderView.xib; sourceTree = "<group>"; };
+		A6AF5ECD226E0E6800EA0686 /* SchedulePresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchedulePresentable.swift; sourceTree = "<group>"; };
+		A6AF5ECF226E0FE200EA0686 /* UIStackView+Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Utility.swift"; sourceTree = "<group>"; };
+		A6F93E1E226E429000982563 /* airports_data */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = airports_data; sourceTree = "<group>"; };
 		CEDF029CB8B16713BED110AB /* Pods-BodaFlightsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BodaFlightsUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BodaFlightsUITests/Pods-BodaFlightsUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		DBC5040B99054AA5B8177032 /* Pods-BodaFlights.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BodaFlights.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BodaFlights/Pods-BodaFlights.debug.xcconfig"; sourceTree = "<group>"; };
 		E00CC0007B6A44E179F9C978 /* Pods-BodaFlightsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BodaFlightsTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BodaFlightsTests/Pods-BodaFlightsTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -204,7 +216,6 @@
 				A61575AC226D608100904650 /* AirportSearchViewController.swift */,
 				A61575AE226D60FD00904650 /* AirportTableViewCell.swift */,
 				A61575B0226D612C00904650 /* AirportTableViewCell.xib */,
-				A61575B5226D674C00904650 /* AirportPresentable.swift */,
 			);
 			path = "Airport Search";
 			sourceTree = "<group>";
@@ -216,7 +227,6 @@
 				A61575BA226D750C00904650 /* AirportSchedulesViewModel.swift */,
 				A61575CA226D9FA700904650 /* AirportScheduleTableViewCell.swift */,
 				A61575CE226DA1A800904650 /* AirportScheduleTableViewCell.xib */,
-				A61575CC226DA01600904650 /* SchedulePresentable.swift */,
 			);
 			path = Schedules;
 			sourceTree = "<group>";
@@ -224,7 +234,7 @@
 		A61575D0226DBE3100904650 /* Schedule Detail */ = {
 			isa = PBXGroup;
 			children = (
-				A61575D1226DBF1600904650 /* ScheduleDetailViewController.swift */,
+				A6AF5EC6226DF9BD00EA0686 /* MapViewController.swift */,
 			);
 			path = "Schedule Detail";
 			sourceTree = "<group>";
@@ -301,6 +311,8 @@
 			children = (
 				A615E384226CD80800640D94 /* BodaTextField.swift */,
 				A61575B2226D618B00904650 /* BodaLabel.swift */,
+				A6AF5EC8226E0ABD00EA0686 /* ScheduleHeaderView.swift */,
+				A6AF5ECB226E0CEA00EA0686 /* ScheduleHeaderView.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -308,6 +320,7 @@
 		A615E34B226B195800640D94 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				A6F93E1E226E429000982563 /* airports_data */,
 				A615E363226C23D800640D94 /* R.generated.swift */,
 				A615E327226AFF4800640D94 /* Info.plist */,
 				A615E322226AFF4800640D94 /* Assets.xcassets */,
@@ -366,6 +379,7 @@
 				A615E38A226CE30D00640D94 /* IBInspectables.swift */,
 				A61575BE226D76B200904650 /* ObservableType+Tracker.swift */,
 				A61575C0226D76FA00904650 /* ObservableType+Utility.swift */,
+				A6AF5ECF226E0FE200EA0686 /* UIStackView+Utility.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -373,6 +387,7 @@
 		A615E351226B1C9300640D94 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				A6AF5ECA226E0B0B00EA0686 /* Presentable */,
 				A615E35C226B73E800640D94 /* Logger.swift */,
 				A615E36B226C4B0200640D94 /* Inlines.swift */,
 				A615E371226C5D1C00640D94 /* Configurable.swift */,
@@ -392,6 +407,7 @@
 				A615E380226C6A4200640D94 /* LufthansaName.swift */,
 				A61575C6226D7C1F00904650 /* Schedule.swift */,
 				A61575C8226D7F3800904650 /* Flight.swift */,
+				A691E285226DD4C800DC1E77 /* Location.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -428,6 +444,16 @@
 				A615E36D226C4E3100640D94 /* HomeViewController.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		A6AF5ECA226E0B0B00EA0686 /* Presentable */ = {
+			isa = PBXGroup;
+			children = (
+				A61575CC226DA01600904650 /* FlightPresentable.swift */,
+				A61575B5226D674C00904650 /* AirportPresentable.swift */,
+				A6AF5ECD226E0E6800EA0686 /* SchedulePresentable.swift */,
+			);
+			path = Presentable;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -539,10 +565,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A6F93E1F226E429100982563 /* airports_data in Resources */,
 				A615E326226AFF4800640D94 /* LaunchScreen.storyboard in Resources */,
 				A61575B1226D612C00904650 /* AirportTableViewCell.xib in Resources */,
 				A615E323226AFF4800640D94 /* Assets.xcassets in Resources */,
 				A615E321226AFF4700640D94 /* Main.storyboard in Resources */,
+				A6AF5ECC226E0CEA00EA0686 /* ScheduleHeaderView.xib in Resources */,
 				A61575CF226DA1A800904650 /* AirportScheduleTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -608,10 +636,13 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-BodaFlights/Pods-BodaFlights-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/DZNEmptyDataSet/DZNEmptyDataSet.framework",
+				"${BUILT_PRODUCTS_DIR}/Differentiator/Differentiator.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
 				"${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxDataSources/RxDataSources.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
@@ -619,10 +650,13 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DZNEmptyDataSet.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Differentiator.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Rswift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxDataSources.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
@@ -675,6 +709,7 @@
 			files = (
 				A61575B3226D618B00904650 /* BodaLabel.swift in Sources */,
 				A615E36C226C4B0200640D94 /* Inlines.swift in Sources */,
+				A6AF5ED0226E0FE200EA0686 /* UIStackView+Utility.swift in Sources */,
 				A615E31E226AFF4700640D94 /* LoginViewController.swift in Sources */,
 				A615E372226C5D1C00640D94 /* Configurable.swift in Sources */,
 				A61575CB226D9FA700904650 /* AirportScheduleTableViewCell.swift in Sources */,
@@ -683,9 +718,10 @@
 				A615E355226B1D4B00640D94 /* BodaError.swift in Sources */,
 				A615E37B226C652C00640D94 /* Airport.swift in Sources */,
 				A61575B9226D71E400904650 /* AirportSchedulesViewController.swift in Sources */,
+				A6AF5EC9226E0ABD00EA0686 /* ScheduleHeaderView.swift in Sources */,
 				A61575BD226D753900904650 /* ViewModelType.swift in Sources */,
-				A61575D2226DBF1600904650 /* ScheduleDetailViewController.swift in Sources */,
 				A615E377226C5F6B00640D94 /* BaseViewController.swift in Sources */,
+				A6AF5EC7226DF9BD00EA0686 /* MapViewController.swift in Sources */,
 				A615E31C226AFF4700640D94 /* AppDelegate.swift in Sources */,
 				A615E36E226C4E3100640D94 /* HomeViewController.swift in Sources */,
 				A615E36A226C3BA400640D94 /* UserDefaults+Utility.swift in Sources */,
@@ -695,7 +731,7 @@
 				A615E359226B724C00640D94 /* LufthansaAPI.swift in Sources */,
 				A615E389226CDFCD00640D94 /* UIView+Utility.swift in Sources */,
 				A615E35D226B73E800640D94 /* Logger.swift in Sources */,
-				A61575CD226DA01600904650 /* SchedulePresentable.swift in Sources */,
+				A61575CD226DA01600904650 /* FlightPresentable.swift in Sources */,
 				A61575BF226D76B200904650 /* ObservableType+Tracker.swift in Sources */,
 				A615E38B226CE30D00640D94 /* IBInspectables.swift in Sources */,
 				A615E370226C5AC800640D94 /* Date+Utility.swift in Sources */,
@@ -707,7 +743,9 @@
 				A615E35B226B72FF00640D94 /* UIViewController+Utility.swift in Sources */,
 				A61575B6226D674C00904650 /* AirportPresentable.swift in Sources */,
 				A615E379226C614700640D94 /* PersistenceManager.swift in Sources */,
+				A691E286226DD4C800DC1E77 /* Location.swift in Sources */,
 				A615E37F226C654A00640D94 /* Country.swift in Sources */,
+				A6AF5ECE226E0E6800EA0686 /* SchedulePresentable.swift in Sources */,
 				A61575C1226D76FA00904650 /* ObservableType+Utility.swift in Sources */,
 				A615E361226B748100640D94 /* UIColor+Utility.swift in Sources */,
 				A61575C3226D778300904650 /* ErrorTracker.swift in Sources */,
@@ -904,7 +942,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.tiendn.BodaFlights;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -926,7 +964,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.tiendn.BodaFlights;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

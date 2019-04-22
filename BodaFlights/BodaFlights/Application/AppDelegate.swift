@@ -22,6 +22,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
+        SVProgressHUD.setDefaultMaskType(.clear)
+        SVProgressHUD.setDefaultAnimationType(.native)
+        SVProgressHUD.setBackgroundColor(UIColor.clear)
+        
         // change navigation item title color
         let navigationBarAppearace = UINavigationBar.appearance()
         navigationBarAppearace.tintColor = UIColor.white

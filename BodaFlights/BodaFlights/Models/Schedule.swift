@@ -7,11 +7,24 @@
 //
 
 import Foundation
+import MapKit
 
 class Schedule: Codable {
     var duration: String
     var flights: [Flight] = []
 
+    var coordinates: [CLLocationCoordinate2D] {
+        var airports:[Airport?] = flights.map { $0.departure }
+        airports.append(flights.last?.arrival)
+        return airports.compactMap { $0?.location?.coordinate }
+    }
+    
+    var airports: [Airport] {
+        var airports:[Airport?] = flights.map { $0.departure }
+        airports.append(flights.last?.arrival)
+        return airports.compactMap { $0 }
+    }
+    
     enum CodingKeys: String, CodingKey {
         case totalJourney = "TotalJourney"
         case flight = "Flight"
@@ -33,7 +46,7 @@ class Schedule: Codable {
         } else if let flight = try? container.decode(Flight.self, forKey: .flight) {
             flights = [flight]
         }
-        flights.forEach { $0.duration = duration }
+
     }
     
     public func encode(to encoder: Encoder) throws {
@@ -41,6 +54,13 @@ class Schedule: Codable {
         var timeContainer = container.nestedContainer(keyedBy: TotalJourneyKeys.self, forKey: .totalJourney)
         try timeContainer.encode(duration, forKey: .duration)
         try container.encode(flights, forKey: .flight)
+    }
+    
+    func updateAirports() {
+        for flight in flights {
+            flight.arrival = PersistenceManager.shared.airport(from: flight.arrivalCode)
+            flight.departure = PersistenceManager.shared.airport(from: flight.departureCode)
+        }
     }
 }
 

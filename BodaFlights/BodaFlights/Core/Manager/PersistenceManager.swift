@@ -12,6 +12,8 @@ import SVProgressHUD
 class PersistenceManager {
     
     static let shared = PersistenceManager()
+    
+    private var loadDataFromLocal = true        // Update aiports from LufthnasaAPI if false
     private var pagingInfo = PaginationInfo(offset: 0, limit: 100)
     //Countries
     private var countries = [Country]()
@@ -27,9 +29,16 @@ class PersistenceManager {
     func searchAirports(_ searchText: String) -> [Airport] {
         return airports.filter { $0.fullName.lowercased().contains(searchText.lowercased()) }
     }
+    
+    func airport(from code: String) -> Airport? {
+        if let index = airports.firstIndex(where: { $0.code == code }) {
+            return airports[index]
+        }
+        return nil
+    }
 }
 
-//MARK: -
+//MARK: - Load data from local
 extension PersistenceManager {
     fileprivate func getDocumentsDirectory() -> String {
         let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
@@ -52,7 +61,8 @@ extension PersistenceManager {
                     //updateCityOnAirports()
                     onUpdatedAirports?(nil)
                 } catch {
-                    loadFromDumpFile()
+                    //Load from dump file
+                    loadAirportsDataFromFile(url: R.file.airports_data())
                 }
             }
         }
@@ -76,27 +86,16 @@ extension PersistenceManager {
     
     func loadAirportsData() {
         //Check existed file
-        //        if PersistenceManager.ALWAYS_LOAD_FROM_FILE || !FileManager.default.fileExists(atPath: sessionDataFilePath) {
-        //            //Load from dump file
-        //            loadFromDumpFile()
-        //        } else {
-        //            self.loadSessionsDataFromFile(url: URL(fileURLWithPath: sessionDataFilePath))
-        //        }
-        
-        if FileManager.default.fileExists(atPath: airportsDataFilePath) {
+        if !FileManager.default.fileExists(atPath: airportsDataFilePath) {
+            //Load from dump file
+            loadAirportsDataFromFile(url: R.file.airports_data())
+        } else {
             loadAirportsDataFromFile(url: URL(fileURLWithPath: airportsDataFilePath))
         }
     }
-    
-    func loadFromDumpFile() {
-//        #if DEBUG
-//        self.loadSessionsDataFromFile(url: R.file.dump_dataJson())
-//        #endif
-//        self.saveSessionsData()
-    }
 }
 
-//MARK: - Load airports
+//MARK: - Load airports from Lufthansa API
 extension PersistenceManager {
 
     //Load all countries
@@ -107,7 +106,7 @@ extension PersistenceManager {
                 let response = try result.get()
                 let countriesResponse = try response.map(CountryResponse.self)
                 self?.countries.append(contentsOf: countriesResponse.countries)
-                if self?.countries.count == countriesResponse.totalCount {
+                if self?.countries.count == countriesResponse.totalCount || countriesResponse.countries.isEmpty {
                     self?.loadedCountries()
                 } else {
                     self?.loadCountries()
@@ -122,7 +121,6 @@ extension PersistenceManager {
     
     private func loadedCountries() {
         countries.forEach { countryDict[$0.code] = $0 }
-        //loadCities()
         loadAirports()
     }
     
@@ -134,7 +132,7 @@ extension PersistenceManager {
                 let response = try result.get()
                 let citiesResponse = try response.map(CityResponse.self)
                 self?.cities.append(contentsOf: citiesResponse.cities)
-                if self?.cities.count == citiesResponse.totalCount {
+                if self?.cities.count == citiesResponse.totalCount || citiesResponse.cities.isEmpty {
                     self?.loadedCities()
                 } else {
                     self?.loadCities()
@@ -178,20 +176,11 @@ extension PersistenceManager {
     private func loadedAirports() {
         airports.forEach { $0.country = countryDict[$0.countryCode]}
         saveAirportsData()
-        //updateCityOnAirports()
+        updateCityOnAirports()
     }
     
     private func updateCityOnAirport(_ airport: Airport, completed: @escaping (() -> ())) {
         log.debug("===> Begin \(airport.cityCode)")
-        guard airport.city == nil else {
-            completed()
-            return
-        }
-        if let city = cityDict[airport.cityCode] {
-            airport.city = city
-            completed()
-            return
-        }
         lufthansaAPI.request(.cities(code: airport.cityCode, pagingInfo: PaginationInfo.default)) { [weak self] (result) in
             do {
                 let response = try result.get()
@@ -213,57 +202,48 @@ extension PersistenceManager {
     
     // Get city info on airport
     private func updateCityOnAirports() {
-        //Use semaphore to make sure doesn't meet Limit queries per seconds
-//        let dispatchGroup = DispatchGroup()
-//        let dispatchQueue = DispatchQueue(label: "com.gcd.updateCityOnAirportsQueue")
-//        let dispatchSemaphore = DispatchSemaphore(value: 0)
-//
-//        dispatchQueue.async {
-//            for airport in self.airports {
-//                dispatchGroup.enter()
-//                log.debug("===> Begin \(airport.cityCode)")
-//                self.updateCityOnAirport(airport) {
-//                    dispatchSemaphore.signal()
-//                    dispatchGroup.leave()
-//                    log.debug("===> End \(airport.cityCode)")
-//                }
-//                dispatchSemaphore.wait()
-//            }
-//        }
-//
-//        dispatchGroup.notify(queue: dispatchQueue) {
-//            log.debug("===> Finish")
-//            DispatchQueue.main.async { [weak self] in
-//                self?.onUpdatedAirports?(nil)
-//            }
-//        }
-
+        let remainAirport = airports.filter { $0.city == nil }
+        log.debug("===> Remain \(remainAirport.count)")
+        if remainAirport.isEmpty {
+            saveAirportsData()
+            onUpdatedAirports?(nil)
+            return
+        }
         let group = DispatchGroup()
-        var count = 0
-        for airport in airports {
+        //Limit 5 requests.
+        var maxItems = 5
+        for airport in remainAirport {
+            if maxItems == 0 {
+                break
+            }
+            if airport.city != nil {
+                continue
+            }
+            if let city = cityDict[airport.cityCode] {
+                airport.city = city
+                continue
+            }
             group.enter()
-            count += 1
+            maxItems -= 1
             updateCityOnAirport(airport) {
-                log.debug("===> End \(airport.cityCode)")
+                log.debug("===> End \(airport.code) - \(maxItems)")
                 group.leave()
             }
-//            if count % 5 == 0 {
-//                let delay = DispatchTime.now() + DispatchTimeInterval.seconds(1)
-//                group.wait(timeout: delay)
-//            }
         }
-
         group.notify(queue: DispatchQueue.main) { [weak self] in
-            self?.saveAirportsData()
-            self?.onUpdatedAirports?(nil)
+            self?.updateCityOnAirports()
         }
-
     }
     
     func updateAirportsInfo(_ completed: ((BodaError?) -> ())?) {
-        //loadCountries()
         onUpdatedAirports = completed
-        loadAirportsData()
-        
+
+        if loadDataFromLocal {
+            // Load airports from local file
+            loadAirportsData()
+        } else {
+            // Load all countries -> load all airports -> update countries and city to the Airports.
+            loadCountries()
+        }
     }
 }

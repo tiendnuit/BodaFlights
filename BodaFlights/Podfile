@@ -12,7 +12,9 @@ target 'BodaFlights' do
   pod 'RxCocoa',    '~> 4.0'
   pod 'SVProgressHUD'
   pod 'SnapKit'
-  
+  pod 'RxDataSources'
+  pod 'DZNEmptyDataSet'
+    
   target 'BodaFlightsTests' do
     inherit! :search_paths
     # Pods for testing

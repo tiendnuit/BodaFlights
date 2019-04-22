@@ -19,8 +19,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ckA-xj-lqQ">
-                                <rect key="frame" x="115.5" y="431" width="183" height="34"/>
-                                <state key="normal" title="Request Access Token">
+                                <rect key="frame" x="174.5" y="427" width="65" height="42"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                <state key="normal" title="Login">
                                     <color key="titleColor" red="0.94901960784313721" green="0.95686274509803915" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
@@ -28,7 +29,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.99607843139999996" green="0.52941176469999995" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="ckA-xj-lqQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="PIB-vY-mRr"/>
                             <constraint firstItem="ckA-xj-lqQ" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="eBq-Ar-seZ"/>
@@ -226,9 +227,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="yDt-HJ-o9e">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="yDt-HJ-o9e">
                                 <rect key="frame" x="0.0" y="88" width="414" height="808"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -242,16 +243,17 @@
                     </view>
                     <connections>
                         <outlet property="tableView" destination="yDt-HJ-o9e" id="CIt-zQ-UeJ"/>
+                        <segue destination="jin-5w-8Fs" kind="presentation" identifier="ToDetail" id="OgL-Fn-S7N"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ciO-6C-jZ9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1742" y="1280"/>
         </scene>
-        <!--Schedule Detail View Controller-->
+        <!--Map View Controller-->
         <scene sceneID="b6X-lo-xZo">
             <objects>
-                <viewController storyboardIdentifier="ScheduleDetailViewController" id="jin-5w-8Fs" customClass="ScheduleDetailViewController" customModule="BodaFlights" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MapViewController" id="jin-5w-8Fs" customClass="MapViewController" customModule="BodaFlights" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0RL-NR-V6x">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -259,16 +261,32 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="3Bw-2Y-YOs">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z1S-Wc-yAd">
+                                <rect key="frame" x="10" y="44" width="44" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="44" id="29G-eT-nxQ"/>
+                                    <constraint firstAttribute="height" constant="44" id="NLO-Xp-utC"/>
+                                </constraints>
+                                <state key="normal" image="btn-close"/>
+                                <connections>
+                                    <action selector="closeTapped" destination="jin-5w-8Fs" eventType="touchUpInside" id="dG8-MV-ebR"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="clD-Ox-IMM" firstAttribute="trailing" secondItem="3Bw-2Y-YOs" secondAttribute="trailing" id="EB8-pl-65y"/>
                             <constraint firstAttribute="bottom" secondItem="3Bw-2Y-YOs" secondAttribute="bottom" id="HO4-UM-y5T"/>
                             <constraint firstItem="3Bw-2Y-YOs" firstAttribute="top" secondItem="0RL-NR-V6x" secondAttribute="top" id="Q5G-lL-fhY"/>
+                            <constraint firstItem="z1S-Wc-yAd" firstAttribute="leading" secondItem="clD-Ox-IMM" secondAttribute="leading" constant="10" id="gob-R4-tRV"/>
+                            <constraint firstItem="z1S-Wc-yAd" firstAttribute="top" secondItem="clD-Ox-IMM" secondAttribute="top" id="obB-lT-3hb"/>
                             <constraint firstItem="3Bw-2Y-YOs" firstAttribute="leading" secondItem="clD-Ox-IMM" secondAttribute="leading" id="vgq-qA-YzP"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="clD-Ox-IMM"/>
                     </view>
+                    <connections>
+                        <outlet property="mapView" destination="3Bw-2Y-YOs" id="bam-ei-k0y"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fkI-5W-al5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -276,6 +294,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="btn-close" width="200" height="200"/>
         <image name="icon-flight-arrival" width="20" height="14"/>
         <image name="icon-flight-departures" width="20" height="12"/>
     </resources>

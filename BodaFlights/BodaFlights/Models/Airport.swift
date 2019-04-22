@@ -16,6 +16,7 @@ class Airport: Codable {
     var countryCode: String
     var country: Country?
     var timezone: String
+    var location: Location?
     
     //Airport name
     var name: String {
@@ -41,6 +42,7 @@ class Airport: Codable {
         case countryCode = "CountryCode"
         case country = "Country"
         case timezone = "TimeZoneId"
+        case location = "Position"
     }
     
     required init(from decoder: Decoder) throws {
@@ -54,7 +56,7 @@ class Airport: Codable {
         countryCode = try container.decode(String.self, forKey: .countryCode)
         country = try? container.decode(Country.self, forKey: .country)
         timezone = try container.decode(String.self, forKey: .timezone)
-        
+        location = try? container.decode(Location.self, forKey: .location)
     }
     
     public func encode(to encoder: Encoder) throws {
@@ -64,6 +66,7 @@ class Airport: Codable {
         try container.encode(cityCode, forKey: .cityCode)
         try container.encode(countryCode, forKey: .countryCode)
         try container.encode(timezone, forKey: .timezone)
+        try container.encode(location, forKey: .location)
         if let city = city {
             try container.encode(city, forKey: .city)
         }

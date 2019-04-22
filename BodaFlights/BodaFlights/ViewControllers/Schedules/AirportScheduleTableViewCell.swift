@@ -17,7 +17,6 @@ class AirportScheduleTableViewCell: UITableViewCell, Configurable, FlightPresent
     @IBOutlet weak var departTimeLabel: UILabel!
     @IBOutlet weak var arrivalCodeLabel: UILabel!
     @IBOutlet weak var arrivalTimeLabel: UILabel!
-    @IBOutlet weak var transitLabel: UILabel!
     
     func configure(item: Any) {
         map(flight: item as? Flight)
